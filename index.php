@@ -75,9 +75,14 @@
                                 
                                 foreach ($numeros as $key => $value){
 
-                                    echo "<tr>";
+                                    if (($matchesz[0][$value])<1.500){
+                                        echo "<tr class=\"table-success\">";
+                                    } else{
+                                        echo "<tr>";
+                                    }
+
                                     echo "<th scope=\"row\">".$value."</th>";
-                                    echo "<td class=\"table-warning\">".$matchesx[0][$value]."</td>";
+                                    echo "<td>".$matchesx[0][$value]."</td>";
                                     echo "<td>".$matchesy[0][$value]."</td>";
                                     echo "<td>".$matchesz[0][$value]."</td>";
                                     echo "</tr>";
