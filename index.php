@@ -71,9 +71,11 @@
                                 </thead>
                                 <tbody>
 
-                                <?php 
+                                <?php
 
-                                echo "<h1>".$matchesz[0][1]."</h1>";
+                                $int = (int) filter_var($matchesz[0][1], FILTER_SANITIZE_NUMBER_INT);
+
+                                echo "<h1 style=\"color: white;\";>".$int."</h1>";
                                 
                                 foreach ($numeros as $key => $value){
 
