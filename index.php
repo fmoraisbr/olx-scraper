@@ -73,7 +73,7 @@
 
                                 <?php 
 
-                                echo "<h1>".$matchesz[0][$value]."</h1>";
+                                echo "<h1>".$matchesz[0][1]."</h1>";
                                 
                                 foreach ($numeros as $key => $value){
 
