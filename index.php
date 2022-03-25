@@ -84,7 +84,7 @@
 
                                 $pre = preg_replace("/[^0-9]/", "", $valor);
                                 //echo "<h1>".$preg."</h1>";
-                                echo "<h1>AAAAAAAAAAAAAAAAA</h1>"
+                                echo "<h1>AAAAAAAAAAAAAAAAA</h1>";
                                 
 
                                                                 
