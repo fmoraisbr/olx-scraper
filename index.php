@@ -77,6 +77,7 @@
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
                                 //$matchesz[0][1]
 
+                                echo $matchesz[0][1];
                                 echo "<h1 style=\"color: white;\";>".$int."</h1>";
                                 
                                 foreach ($numeros as $key => $value){
