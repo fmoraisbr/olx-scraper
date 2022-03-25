@@ -82,13 +82,15 @@
                                 $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
                                 $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
 
+                                preg_match_all('!\d+!', $valor, $matchesg);
+
                                 if(intval($valor) > 500){
                                     echo "<h1> MAIOR: ".$valor." </h1>";
-                                    var_dump($valor);
+                                    var_dump($matchesg);
                                 }
                                 if(intval($valor) < 500){
                                     echo "<h1> MENOR: ".$valor." </h1>";
-                                    var_dump($valor);
+                                    var_dump($matchesg);
                                 }
                                 
                                 foreach ($numeros as $key => $value){
