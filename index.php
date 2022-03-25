@@ -73,7 +73,7 @@
 
                                 <?php
 
-                                $string = '$matchesz[0][1]';                               
+                                $string = $matchesz[0][1];                               
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
                                 //$matchesz[0][1]
 
