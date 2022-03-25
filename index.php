@@ -86,11 +86,11 @@
 
                                 if(intval($valor) > 500){
                                     echo "<h1> MAIOR: ".$valor." </h1>";
-                                    var_dump($valor);
+                                    var_dump(intval($valor));
                                 }
                                 if(intval($valor) < 500){
                                     echo "<h1> MENOR: ".$valor." </h1>";
-                                    var_dump($valor);
+                                    var_dump(intval($valor));
                                 }
                                 
                                 foreach ($numeros as $key => $value){
