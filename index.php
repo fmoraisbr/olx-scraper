@@ -86,7 +86,8 @@
                                     $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
 
                                     if ($valor < 500){
-                                        echo "<tr class=\"table-success ".$valor."\">";
+                                        echo "<tr class=\"table-success\">";
+                                        print_r($valor);
                                     } else{
                                         echo "<tr>";
                                     }
