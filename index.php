@@ -82,7 +82,7 @@
                                 $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
                                 $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
 
-                                if($valor < 500){
+                                if(intval($valor) < 500){
                                     echo "<h1>".$valor."</h1>";
                                 }else{
                                     echo "<h2>".$valor."</h2>";
