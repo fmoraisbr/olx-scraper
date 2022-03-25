@@ -79,7 +79,7 @@
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
 
                                 foreach ($numeros as $key => $value){
-                                    echo "<h1>".var_dump($matchest[0][$value])."</h1>";
+                                    echo "<h1>".var_dump($matchest[0][0])."</h1>";
                                 }
                                 
                                 /*$valor = $matchesz[0][0];
