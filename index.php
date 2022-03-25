@@ -82,17 +82,11 @@
                                 $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
                                 $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
 
-                                preg_replace("/[^0-9]/", "", $valor);
-
-                                if(intval($valor) > 500){
-                                    echo "<h1> MAIOR: ".intval($valor)." </h1>";
-                                    var_dump(intval($valor));
-                                }
-                                if(intval($valor) < 500){
-                                    echo "<h1> MENOR: ".intval($valor)." </h1>";
-                                    var_dump(intval($valor));
-                                }
+                                $pre = preg_replace("/[^0-9]/", "", $valor);
+                                echo $preg;
                                 
+
+                                                                
                                 foreach ($numeros as $key => $value){
 
                                     $valor = $matchesz[0][$value];
@@ -101,7 +95,7 @@
                                     $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
                                     $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
 
-                                    if (intval($valor) < 1300){
+                                    if (intval($valor) > 1300){
                                         echo "<tr class=\"table-success\">";
                                     } else{
                                         echo "<tr>";
