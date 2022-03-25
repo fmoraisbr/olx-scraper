@@ -83,9 +83,9 @@
                                 $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
 
                                 if(intval($valor) < 500){
-                                    echo "<h1> MENOR! </h1>";
+                                    echo "<h1> MENOR: ".$valor." </h1>";
                                 }else{
-                                    echo "<h1> MAIOR! </h1>";
+                                    echo "<h1> MAIOR: ".$valor." </h1>";
                                 }
                                 
                                 foreach ($numeros as $key => $value){
@@ -98,7 +98,6 @@
 
                                     if ($valor < 500){
                                         echo "<tr class=\"table-success\">";
-                                        print_r($valor);
                                     } else{
                                         echo "<tr>";
                                     }
