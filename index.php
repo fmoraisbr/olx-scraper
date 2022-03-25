@@ -52,6 +52,7 @@
                                 preg_match_all('/<span color="dark" aria-label="(.*?)" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
                                 preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
                                 preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
+                                preg_match_all('/<span color="dark" title="(.*?)" class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchest);
 
                                 echo "<br>";
 
@@ -66,6 +67,7 @@
                                     <th scope="col">Nº</th>
                                     <th scope="col">Dia</th>
                                     <th scope="col">Hora</th>
+                                    <th scope="col">Formato</th>
                                     <th scope="col">Preço</th>
                                     </tr>
                                 </thead>
@@ -108,6 +110,7 @@
                                     echo "<th scope=\"row\">".$value."</th>";
                                     echo "<td>".$matchesx[0][$value]."</td>";
                                     echo "<td>".$matchesy[0][$value]."</td>";
+                                    echo "<td>".$matchest[0][$value]."</td>";
                                     echo "<td>".$matchesz[0][$value]."</td>";
                                     echo "</tr>";
 
