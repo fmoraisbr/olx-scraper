@@ -57,37 +57,53 @@
 
                                 $numeros = array("0","1","2","3","4");
 
+                                ?>
+
+
+                                <table class="table branco">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">Nº</th>
+                                    <th scope="col">Dia</th>
+                                    <th scope="col">Hora</th>
+                                    <th scope="col">Preço</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                <?php 
+                                
                                 foreach ($numeros as $key => $value){
+
+                                    echo "<tr>";
+                                    echo "<th scope=\"row\">".$value."</th>";
+                                    echo "<td>".$matchesx[0][$value]."</td>";
+                                    echo "<td>".$matchesy[0][$value]."</td>";
+                                    echo "<td>".$matchesz[0][$value]."</td>";
+                                    echo "</tr>";
+
                                     echo "<p>".$matchesx[0][$value]." às ";
                                     echo $matchesy[0][$value]."<br/>";
                                     echo $matchesz[0][$value]."<br/></p>";
                                 }
+                                
+                                ?>
 
-                            ?>
+                                </tbody>
+                                </table>
+
+                                <?php
+
+                                /*foreach ($numeros as $key => $value){
+                                    echo "<p>".$matchesx[0][$value]." às ";
+                                    echo $matchesy[0][$value]."<br/>";
+                                    echo $matchesz[0][$value]."<br/></p>";
+                                }*/
+
+                                ?>
 
                         </p> <!--
                         <a class="btn btn-primary btn-xl" href="#about">Find Out More</a> -->
-
-                        <table class="table branco">
-  <thead>
-    <tr>
-      <th scope="col">Nº</th>
-      <th scope="col">Dia</th>
-      <th scope="col">Hora</th>
-      <th scope="col">Preço</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-</table>
-
-
 
                     </div>
                 </div>
