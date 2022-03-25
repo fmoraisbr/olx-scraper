@@ -82,9 +82,6 @@
                                     echo "<td>".$matchesz[0][$value]."</td>";
                                     echo "</tr>";
 
-                                    echo "<p>".$matchesx[0][$value]." às ";
-                                    echo $matchesy[0][$value]."<br/>";
-                                    echo $matchesz[0][$value]."<br/></p>";
                                 }
                                 
                                 ?>
