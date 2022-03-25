@@ -52,7 +52,7 @@
                                 preg_match_all('/<span color="dark" aria-label="(.*?)" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
                                 preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
                                 preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
-                                preg_match_all('/<span color="dark" title="" class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchest);
+                                preg_match_all('/<span color="dark" title="(.*?)" class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchest);
 
                                 echo "<br>";
 
@@ -78,7 +78,7 @@
                                 $string = 'Sarah has 4 dolls and 6 bunnies.';                                
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
 
-                                echo "<h1>".print_r($matchest)."</h1>";
+                                echo "<h1>".$matchest[1][1]."</h1>";
                                 
                                 /*$valor = $matchesz[0][0];
 
