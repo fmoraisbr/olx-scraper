@@ -65,8 +65,8 @@
 
                             ?>
 
-                        </p>
-                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                        </p> <!--
+                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a> -->
                     </div>
                 </div>
             </div>
