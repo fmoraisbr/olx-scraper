@@ -76,7 +76,14 @@
                                 $string = 'Sarah has 4 dolls and 6 bunnies.';                                
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
                                 //$matchesz[0][1]
-                             
+
+                                $valor = $matchesz[0][1];
+
+                                $valor = str_replace("." , "" , $valor ); // Primeiro tira os pontos
+                                $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
+                                $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
+                                
+                                echo "<h1 style=\"color: white;\";>".$valor."</h1>";
                                 echo "<h1 style=\"color: white;\";>".$matchesz[0][1]."</h1>";
                                 echo "<h1 style=\"color: white;\";>".$int."</h1><br/>";
                                 
