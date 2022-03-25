@@ -68,11 +68,10 @@
                         </p> <!--
                         <a class="btn btn-primary btn-xl" href="#about">Find Out More</a> -->
 
-                        
-<table class="table table-bordered branco">
+                        <table class="table branco">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">Nº</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
       <th scope="col">Handle</th>
@@ -93,12 +92,13 @@
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td colspan="2">Larry the Bird</td>
+      <td>Larry</td>
+      <td>the Bird</td>
       <td>@twitter</td>
     </tr>
   </tbody>
 </table>
+
 
 
                     </div>
