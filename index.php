@@ -96,7 +96,7 @@
                                     $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
                                     $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
 
-                                    if ($valor < 1300){
+                                    if (intval($valor) < 1300){
                                         echo "<tr class=\"table-success\">";
                                     } else{
                                         echo "<tr>";
