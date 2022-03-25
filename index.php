@@ -72,9 +72,9 @@
   <thead>
     <tr>
       <th scope="col">Nº</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Dia</th>
+      <th scope="col">Hora</th>
+      <th scope="col">Preço</th>
     </tr>
   </thead>
   <tbody>
@@ -83,18 +83,6 @@
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
     </tr>
   </tbody>
 </table>
