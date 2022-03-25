@@ -66,8 +66,8 @@
                                     <tr>
                                     <th scope="col">Nº</th>
                                     <th scope="col">Dia</th>
-                                    <th scope="col">Hora</th>
-                                    <th scope="col">Formato</th>
+                                    <th scope="col">Hora</th><!--
+                                    <th scope="col">Formato</th> -->
                                     <th scope="col">Preço</th>
                                     </tr>
                                 </thead>
@@ -78,7 +78,7 @@
                                 /*$string = 'Sarah has 4 dolls and 6 bunnies.';                                
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);*/
 
-                                echo "<h1>".$matchest[0][0]."</h1>";
+                                //echo "<h1>".$matchest[0][0]."</h1>";
                                 
                                 /*$valor = $matchesz[0][0];
 
@@ -112,7 +112,7 @@
                                     echo "<th scope=\"row\">".$value."</th>";
                                     echo "<td>".$matchesx[0][$value]."</td>";
                                     echo "<td>".$matchesy[0][$value]."</td>";
-                                    echo "<td>".$value."</td>";
+                                    //echo "<td>".$value."</td>";
                                     echo "<td>".$matchesz[0][$value]."</td>";
                                     echo "</tr>";
 
