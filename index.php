@@ -75,7 +75,7 @@
                                 
                                 foreach ($numeros as $key => $value){
 
-                                    if (($matchesz[0][$value])<1.500){
+                                    if (($matchesz[0][$value])<500){
                                         echo "<tr class=\"table-success\">";
                                     } else{
                                         echo "<tr>";
