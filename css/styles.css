@@ -11460,3 +11460,7 @@ header.masthead h1, header.masthead .h1 {
 .branco{
   color: white;
 }
+
+table.table.branco {
+  color: white;
+}
