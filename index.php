@@ -77,10 +77,10 @@
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
                                 //$matchesz[0][1]
 
-                                /*$formatter = numfmt_create('pt_BR', NumberFormatter::CURRENCY);
-                                numfmt_parse_currency($formatter, "R$ 5.000,00", "BRL");*/
+                                $formatter = numfmt_create('pt_BR', NumberFormatter::CURRENCY);
+                                $intx = numfmt_parse_currency($formatter, "R$ 5.000,00", "BRL");
 
-                                //echo "<h1 style=\"color: white;\";>".."</h1>";
+                                echo "<h1 style=\"color: white;\";>".$intx."</h1>";
                                 echo "<h1 style=\"color: white;\";>".$matchesz[0][1]."</h1>";
                                 echo "<h1 style=\"color: white;\";>".$int."</h1><br/>";
                                 
