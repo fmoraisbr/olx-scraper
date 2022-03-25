@@ -85,11 +85,11 @@
                                 preg_replace("/[^0-9]/", "", $valor);
 
                                 if(intval($valor) > 500){
-                                    echo "<h1> MAIOR: ".$valor." </h1>";
+                                    echo "<h1> MAIOR: ".intval($valor)." </h1>";
                                     var_dump(intval($valor));
                                 }
                                 if(intval($valor) < 500){
-                                    echo "<h1> MENOR: ".$valor." </h1>";
+                                    echo "<h1> MENOR: ".intval($valor)." </h1>";
                                     var_dump(intval($valor));
                                 }
                                 
