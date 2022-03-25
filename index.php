@@ -72,6 +72,8 @@
                                 <tbody>
 
                                 <?php 
+
+                                print_r($matchesz[0][$value);
                                 
                                 foreach ($numeros as $key => $value){
 
