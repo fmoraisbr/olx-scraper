@@ -68,7 +68,7 @@
                         </p> <!--
                         <a class="btn btn-primary btn-xl" href="#about">Find Out More</a> -->
 
-                        <table class="table">
+                        <table class="table branco">
   <thead>
     <tr>
       <th scope="col">#</th>
