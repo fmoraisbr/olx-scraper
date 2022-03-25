@@ -58,9 +58,9 @@
                                 $numeros = array("0","1","2","3","4");
 
                                 foreach ($numeros as $key => $value){
-                                    echo "<h2>".$matchesx[0][$value]." às ";
+                                    echo "<p class="text-white-75 mb-5">".$matchesx[0][$value]." às ";
                                     echo $matchesy[0][$value]."<br/>";
-                                    echo $matchesz[0][$value]."<br/></h2>";
+                                    echo $matchesz[0][$value]."<br/></p>";
                                 }
 
                             ?>
