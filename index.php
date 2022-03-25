@@ -78,8 +78,9 @@
                                 //$matchesz[0][1]
 
                                 $formatter = numfmt_create('pt_BR', NumberFormatter::CURRENCY);
-                                
-                                echo "<h1 style=\"color: white;\";>".numfmt_parse_currency($formatter, "R$ 5.000,00", "BRL")."</h1>";
+                                numfmt_parse_currency($formatter, "R$ 5.000,00", "BRL");
+
+                                echo "<h1 style=\"color: white;\";>".."</h1>";
                                 echo "<h1 style=\"color: white;\";>".$matchesz[0][1]."</h1>";
                                 echo "<h1 style=\"color: white;\";>".$int."</h1><br/>";
                                 
