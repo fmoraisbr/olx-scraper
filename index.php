@@ -77,7 +77,9 @@
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
                                 //$matchesz[0][1]
 
-                                echo "<h1 style=\"color: white;\";>".$outputString = preg_replace('/[^0-9]/', '', $matchesz[0][1])."</h1>";
+                                $intx = $matchesz[0][1];
+
+                                echo "<h1 style=\"color: white;\";>".$intx."</h1>";
                                 echo "<h1 style=\"color: white;\";>".$matchesz[0][1]."</h1>";
                                 echo "<h1 style=\"color: white;\";>".$int."</h1><br/>";
                                 
