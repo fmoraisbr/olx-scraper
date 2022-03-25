@@ -83,7 +83,8 @@
                                 $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
 
                                 $pre = preg_replace("/[^0-9]/", "", $valor);
-                                echo "<h1>".$preg."</h1>";
+                                //echo "<h1>".$preg."</h1>";
+                                echo "<h1>AAAAAAAAAAAAAAAAA</h1>"
                                 
 
                                                                 
