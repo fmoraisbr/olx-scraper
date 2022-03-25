@@ -82,7 +82,7 @@
                                 $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
                                 $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
 
-                                echo "<h1>".$valor."/h1";
+                                echo "<h1>".$valor."</h1>";
                                 
                                 foreach ($numeros as $key => $value){
 
