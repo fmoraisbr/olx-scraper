@@ -73,7 +73,9 @@
 
                                 <?php
 
-                                $int = (int) filter_var($matchesz[0][1], FILTER_SANITIZE_NUMBER_INT);
+                                $string = 'Sarah has 4 dolls and 6 bunnies.';                                
+                                $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
+                                //$matchesz[0][1]
 
                                 echo "<h1 style=\"color: white;\";>".$int."</h1>";
                                 
