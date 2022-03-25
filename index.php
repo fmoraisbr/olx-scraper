@@ -75,7 +75,14 @@
 
                                 $string = 'Sarah has 4 dolls and 6 bunnies.';                                
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
-                                //$matchesz[0][1]
+                                
+                                $valor = $matchesz[0][0];
+
+                                $valor = str_replace("." , "" , $valor ); // Primeiro tira os pontos
+                                $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
+                                $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
+
+                                echo "<h1>".$valor."/h1";
                                 
                                 foreach ($numeros as $key => $value){
 
@@ -85,7 +92,7 @@
                                     $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
                                     $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
 
-                                    if ($valor < 5000){
+                                    if ($valor < 500){
                                         echo "<tr class=\"table-success\">";
                                         print_r($valor);
                                     } else{
