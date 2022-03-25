@@ -73,12 +73,13 @@
 
                                 <?php
 
-                                $string = $matchesz[0][1];                               
+                                $string = 'Sarah has 4 dolls and 6 bunnies.';                                
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
                                 //$matchesz[0][1]
 
-                                echo $matchesz[0][1];
-                                echo "<h1 style=\"color: white;\";>".$int."</h1>";
+                                echo "<h1 style=\"color: white;\";>".$outputString = preg_replace('/[^0-9]/', '', $matchesz[0][1])."</h1>";
+                                echo "<h1 style=\"color: white;\";>".$matchesz[0][1]."</h1>";
+                                echo "<h1 style=\"color: white;\";>".$int."</h1><br/>";
                                 
                                 foreach ($numeros as $key => $value){
 
