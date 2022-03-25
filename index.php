@@ -76,15 +76,15 @@
                                 $string = 'Sarah has 4 dolls and 6 bunnies.';                                
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
                                 
-                                $valor = $matchesz[0][0];
+                                /*$valor = $matchesz[0][0];
 
-                                $valor = str_replace("." , "" , $valor ); // Primeiro tira os pontos
-                                $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
-                                $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
+                                $valor = str_replace("." , "" , $valor );
+                                $valor = str_replace("," , "" , $valor);
+                                $valor = str_replace("R$ " , "" , $valor);
 
                                 $pre = preg_replace("/[^0-9]/", "", $valor);
                                 echo "<h1>".$preg."</h1>";
-                                var_dump($pre);
+                                var_dump($pre);*/
                                 //echo "<h1>AAAAAAAAAAAAAAAAA</h1>";
                                 //echo "<h1>".$valor."</h1>";
                                 
@@ -92,18 +92,19 @@
                                                                 
                                 foreach ($numeros as $key => $value){
 
-                                    $valor = $matchesz[0][$value];
+                                    /*$valor = $matchesz[0][$value];
 
-                                    $valor = str_replace("." , "" , $valor ); // Primeiro tira os pontos
-                                    $valor = str_replace("," , "" , $valor); // Depois tira a vírgula
-                                    $valor = str_replace("R$ " , "" , $valor); // Depois tira a vírgula
+                                    $valor = str_replace("." , "" , $valor );
+                                    $valor = str_replace("," , "" , $valor);
+                                    $valor = str_replace("R$ " , "" , $valor);
 
                                     if (intval($valor) > 1300){
                                         echo "<tr class=\"table-success\">";
                                     } else{
                                         echo "<tr>";
-                                    }
+                                    }*/
 
+                                    echo "<tr>";
                                     echo "<th scope=\"row\">".$value."</th>";
                                     echo "<td>".$matchesx[0][$value]."</td>";
                                     echo "<td>".$matchesy[0][$value]."</td>";
