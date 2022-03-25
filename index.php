@@ -76,8 +76,8 @@
                                 foreach ($numeros as $key => $value){
 
                                     echo "<tr>";
-                                    echo "<th scope=\"row\" class=\"table-warning\">".$value."</th>";
-                                    echo "<td>".$matchesx[0][$value]."</td>";
+                                    echo "<th scope=\"row\">".$value."</th>";
+                                    echo "<td class=\"table-warning\">".$matchesx[0][$value]."</td>";
                                     echo "<td>".$matchesy[0][$value]."</td>";
                                     echo "<td>".$matchesz[0][$value]."</td>";
                                     echo "</tr>";
