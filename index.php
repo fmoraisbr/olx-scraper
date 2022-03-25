@@ -78,7 +78,9 @@
                                 $string = 'Sarah has 4 dolls and 6 bunnies.';                                
                                 $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);
 
-                                echo "<h1>".var_dump($matchest[0][0])."</h1>";
+                                foreach ($numeros as $key => $value){
+                                    echo "<h1>".var_dump($matchest[0][$value])."</h1>";
+                                }
                                 
                                 /*$valor = $matchesz[0][0];
 
