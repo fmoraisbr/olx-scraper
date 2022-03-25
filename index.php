@@ -100,7 +100,7 @@
 </table>
 
 
-<table class="table table-bordered">
+<table class="table table-bordered branco">
   <thead>
     <tr>
       <th scope="col">#</th>
