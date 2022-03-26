@@ -42,8 +42,8 @@
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <img src="https://logodownload.org/wp-content/uploads/2016/10/olx-logo-13.png" class="rounded">
-                    <h1 class="text-white font-weight-bold">OLX</h1>
+                    <img src="https://logodownload.org/wp-content/uploads/2016/10/olx-logo-13.png" class="rounded" style="max-width: 50%;">
+                    <!-- <h1 class="text-white font-weight-bold">OLX</h1> -->
                     <hr class="divider" />
                 </div>
                 <div class="col-lg-8 align-self-baseline">
