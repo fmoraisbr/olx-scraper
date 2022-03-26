@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>Scraping OLX - Aluguéis Candangolândia</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap Icons-->
@@ -83,38 +83,7 @@
 
                             <?php
 
-                            /*$string = 'Sarah has 4 dolls and 6 bunnies.';                                
-                                $int = (int) filter_var($string, FILTER_SANITIZE_NUMBER_INT);*/
-
-                            //echo "<h1>".$matchest[0][0]."</h1>";
-
-                            /*$valor = $matchesz[0][0];
-
-                                $valor = str_replace("." , "" , $valor );
-                                $valor = str_replace("," , "" , $valor);
-                                $valor = str_replace("R$ " , "" , $valor);
-
-                                $pre = preg_replace("/[^0-9]/", "", $valor);
-                                echo "<h1>".$preg."</h1>";
-                                var_dump($pre);*/
-                            //echo "<h1>AAAAAAAAAAAAAAAAA</h1>";
-                            //echo "<h1>".$valor."</h1>";
-
-
-
                             foreach ($numeros as $key => $value) {
-
-                                /*$valor = $matchesz[0][$value];
-
-                                    $valor = str_replace("." , "" , $valor );
-                                    $valor = str_replace("," , "" , $valor);
-                                    $valor = str_replace("R$ " , "" , $valor);
-
-                                    if (intval($valor) > 1300){
-                                        echo "<tr class=\"table-success\">";
-                                    } else{
-                                        echo "<tr>";
-                                    }*/
 
                                 echo "<tr>";
                                 echo "<th scope=\"row\">" . $value . "</th>";
@@ -129,21 +98,7 @@
 
                         </tbody>
                     </table>
-
-                    <?php
-
-                    /*foreach ($numeros as $key => $value){
-                                    echo "<p>".$matchesx[0][$value]." às ";
-                                    echo $matchesy[0][$value]."<br/>";
-                                    echo $matchesz[0][$value]."<br/></p>";
-                                }*/
-
-                    ?>
-
                     </p>
-                    <!--
-                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a> -->
-
                 </div>
             </div>
         </div>
@@ -160,9 +115,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
