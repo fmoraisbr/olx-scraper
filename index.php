@@ -66,7 +66,7 @@
 
                         $numeros = array("0", "1", "2", "3", "4");
 
-                        echo "<h1>".$matchesk."</h1>";
+                        echo "<h1>".var_dump($matchesk)."</h1>";
 
                         ?>
 
