@@ -155,24 +155,23 @@
 
                             foreach ($loop as $key => $value) {
 
-                                $captura = $matchesd[0][$value];
-                                $link = substr($captura, 49, 200);
-                                $aspaslink = str_replace('"', '', $link);
-
                                 echo "<tr>";
+
+                                /* ------------------------ [START] Contador */
+
                                 echo "<th scope=\"row\">" . ($value + 1) . "</th>";
 
+                                /* ------------------------ [END] Contador */
 
-                                /* ------------------------ [START] Isolar String Valor */
+                                /* ------------------------ [START] Isolar String "Valor" */
 
                                 $captura3 = $matchesx[0][$value];
                                 $link3 = substr($captura3, 121, 200);
                                 $aspaslink3 = str_replace('</span>', '', $link3);
 
-                                echo "<td>" . $aspaslink3 . "</td>";
-                                // echo "<td>" . $matchesx[0][$value] . "</td>";
+                                echo "<td>" . $aspaslink3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
 
-                                /* ------------------------ [END] Isolar String Valor */
+                                /* ------------------------ [END] Isolar String "Valor" */
 
                                 echo "<td>" . $matchesy[0][$value] . "</td>";
 
@@ -197,7 +196,16 @@
                                 $variable2 = $matchesk[0][$value];
                                 $integer2 = (int) filter_var($variable2, FILTER_SANITIZE_NUMBER_INT);
 
+                                /* ------------------------ [START] Link ID Anúncio */
+
+                                $captura = $matchesd[0][$value];
+                                $link = substr($captura, 49, 200);
+                                $aspaslink = str_replace('"', '', $link);
+
                                 echo "<td><a href=\"" . $aspaslink . "\" target=\"_blank\">" . ($integer2 * (-1)) . "</a></td>";
+
+                                /* ------------------------ [END] Link ID Anúncio */
+
                                 echo "</tr>";
                             }
 
