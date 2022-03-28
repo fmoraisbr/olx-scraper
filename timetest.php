@@ -28,7 +28,7 @@
     $i = 1;
     while ($i <= 10) {
         echo $i++;
-        sleep(5);
+        //sleep(5);
     }
 
     // while (1 === 1) {
