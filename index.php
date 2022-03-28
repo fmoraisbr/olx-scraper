@@ -176,7 +176,7 @@
                                 /* [3] ------------------------ [START] Hora */
 
                                 $captura4 = $matchesy[0][$value];
-                                $link4 = substr($captura4, 79, 200);
+                                $link4 = substr($captura4, 78, 200);
                                 $aspaslink4 = str_replace('</span>', '', $link4); // echo "<td>" . $matchesy[0][$value] . "</td>";
 
                                 echo "<td>" . $aspaslink4 . "</td>";
