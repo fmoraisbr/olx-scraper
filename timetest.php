@@ -10,9 +10,9 @@
 
 <body>
 
-    <script>
+    <!-- <script>
         alert('Please correct the errors in the form!');
-    </script>
+    </script> -->
 
     <form class="form-inline d-flex justify-content-center" style="border-radius: 4px;" action="timetest.php" method="post" onSubmit="return confirm('Do you want to submit?') ">
         <div class="input-group">
@@ -27,9 +27,8 @@
 
     $i = 1;
     while ($i <= 10) {
-        echo $i++;  /* the printed value would be
-                   $i before the increment
-                   (post-increment) */
+        echo "<script>alert('Please correct the errors in the form!');</script>";
+        sleep(5);
     }
 
     // while (1 === 1) {
