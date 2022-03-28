@@ -65,10 +65,9 @@
                         echo "<br>";
 
                         $numeros = array("0", "1", "2", "3", "4");
-
-                        echo "<h1>".var_dump($matchesk)."</h1>";
+                        
                         echo "<h1>".$matchesk[1][0]."</h1>";
-
+                        
                         ?>
 
 
@@ -78,9 +77,8 @@
                                 <th scope="col">Nº</th>
                                 <th scope="col">Dia</th>
                                 <th scope="col">Hora</th>
-                                <!--
-                                    <th scope="col">Formato</th> -->
                                 <th scope="col">Preço</th>
+                                <th scope="col">ID</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -95,6 +93,7 @@
                                 echo "<td>" . $matchesy[0][$value] . "</td>";
                                 //echo "<td>".$value."</td>";
                                 echo "<td>" . $matchesz[0][$value] . "</td>";
+                                echo "<td>" . $matchesk[1][$value] . "</td>";
                                 echo "</tr>";
                             }
 
