@@ -10,19 +10,25 @@
 
 <body>
 
-    <form class="form-inline d-flex justify-content-center" style="border-radius: 4px;" action="timetest.php" method="post">
+    <script>
+        function validate(form) {
+
+            if (!valid) {
+                alert('Please correct the errors in the form!');
+                return false;
+            } else {
+                return confirm('Do you really want to submit the form?');
+            }
+        }
+    </script>
+
+    <form class="form-inline d-flex justify-content-center" style="border-radius: 4px;" action="timetest.php" method="post" onsubmit="return validate(this);">
         <div class="input-group">
             <input name="entrada" type="text" class="form-control" placeholder="Link do resultado" id="form1">
             <div class="input-group-append">
                 <button class="btn btn-primary" type="submit">Pesquisar</button>
             </div>
         </div>
-        <script type='javascript'>
-
-            alert('Email enviado com Sucesso!'); 
-            javascript:window.location='timetest.php';
-
-        </script>
     </form>
 
     <?php
