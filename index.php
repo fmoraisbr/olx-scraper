@@ -157,13 +157,13 @@
 
                                 echo "<tr>";
 
-                                /* ------------------------ [START] Contador */
+                                /* [1] ------------------------ [START] Contador */
 
                                 echo "<th scope=\"row\">" . ($value + 1) . "</th>";
 
-                                /* ------------------------ [END] Contador */
+                                /* [1] ------------------------ [END] Contador */
 
-                                /* ------------------------ [START] Isolar String "Valor" */
+                                /* [2] ------------------------ [START] Isolar String "Valor" */
 
                                 $captura3 = $matchesx[0][$value];
                                 $link3 = substr($captura3, 121, 200);
@@ -171,17 +171,19 @@
 
                                 echo "<td>" . $aspaslink3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
 
-                                /* ------------------------ [END] Isolar String "Valor" */
+                                /* [2] ------------------------ [END] Isolar String "Valor" */
 
-                                echo "<td>" . $matchesy[0][$value] . "</td>";
+                                /* [3] ------------------------ [START] Hora */
 
-                                // ------------------ OPÇÕES
-                                // $capturaopcoes = $matchesn[0][$value];
-                                // $linkopcoes = substr($capturaopcoes, 63, 200);
-                                // $aspaslink2 = str_replace('"', '', $linkopcoes);
+                                $captura4 = $matchesy[0][$value];
+                                $link4 = substr($captura4, 79, 200);
+                                $aspaslink4 = str_replace('</span>', '', $link4); // echo "<td>" . $matchesy[0][$value] . "</td>";
 
-                                // echo "<td>" . $aspaslink2 . "</td>";
-                                // ------------------ FIM
+                                echo "<td>" . $aspaslink4 . "</td>";
+
+                                /* [3] ------------------------ [END] Hora */
+
+                                /* [4] ------------------------ [START] Valor em R$ */
 
                                 $variable1 = $matchesz[0][$value];
                                 $integer1 = (float) filter_var($variable1, FILTER_SANITIZE_NUMBER_INT);
@@ -193,7 +195,9 @@
                                     echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
                                 }
 
-                                /* ------------------------ [START] Link ID Anúncio */
+                                /* [4] ------------------------ [END] Valor em R$ */
+
+                                /* [5] ------------------------ [START] Link ID Anúncio */
 
                                 $variable2 = $matchesk[0][$value];
                                 $integer2 = (int) filter_var($variable2, FILTER_SANITIZE_NUMBER_INT);
@@ -204,7 +208,7 @@
 
                                 echo "<td><a href=\"" . $aspaslink . "\" target=\"_blank\">" . ($integer2 * (-1)) . "</a></td>";
 
-                                /* ------------------------ [END] Link ID Anúncio */
+                                /* [5] ------------------------ [END] Link ID Anúncio */
 
                                 echo "</tr>";
                             }
