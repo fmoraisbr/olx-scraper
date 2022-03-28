@@ -161,7 +161,19 @@
 
                                 echo "<tr>";
                                 echo "<th scope=\"row\">" . ($value + 1) . "</th>";
-                                echo "<td>" . $matchesx[0][$value] . "</td>";
+
+
+                                /* ------------------------ [START] Isolar String Valor */
+
+                                $captura3 = $matchesx[0][$value];
+                                $link3 = substr($captura3, 120, 200);
+                                $aspaslink3 = str_replace('</span>', '', $link3);
+
+                                echo "<td>" . $aspaslink3 . "</td>";
+                                // echo "<td>" . $matchesx[0][$value] . "</td>";
+
+                                /* ------------------------ [END] Isolar String Valor */
+
                                 echo "<td>" . $matchesy[0][$value] . "</td>";
 
                                 // ------------------ OPÇÕES

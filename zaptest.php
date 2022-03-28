@@ -23,6 +23,7 @@
 
     function send_whatsapp($message = "Test")
     {
+
         $phone = "+556186535340";  // Enter your phone number here
         $apikey = "288162";       // Enter your personal apikey received in step 3 above
 
