@@ -1,10 +1,10 @@
 <?php
 
-while (1  === 1) { // 1 sempre será 1, sempre irá continuar!
+echo "<script type='javascript'>alert('Email enviado com Sucesso!');</script>";
 
-    // código
+// while (1  === 1) {
 
-    echo "<script type='javascript'>alert('Email enviado com Sucesso!');</script>";
+//     echo "<script type='javascript'>alert('Email enviado com Sucesso!');</script>";
 
-    sleep(30); // 30 segundos de pausa!
-}
+//     sleep(30);
+// }
