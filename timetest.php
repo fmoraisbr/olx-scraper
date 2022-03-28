@@ -11,15 +11,7 @@
 <body>
 
     <script>
-        function validate(form) {
-
-            if (!valid) {
-                alert('Please correct the errors in the form!');
-                return false;
-            } else {
-                return confirm('Do you really want to submit the form?');
-            }
-        }
+        alert('Please correct the errors in the form!');
     </script>
 
     <form class="form-inline d-flex justify-content-center" style="border-radius: 4px;" action="timetest.php" method="post" onSubmit="return confirm('Do you want to submit?') ">
