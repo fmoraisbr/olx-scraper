@@ -70,7 +70,9 @@
 
                             <?php
 
-                            $result = $_POST['entrada'];
+                            if (isset($_POST['entrada'])) {
+                                $result = $_POST['entrada'];
+                            }
 
                             $write = file_put_contents("data.txt", $result);
 
