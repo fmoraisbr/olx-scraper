@@ -25,13 +25,19 @@
 
     <?php
 
-    while (1 === 1) {
-
-        // echo "<script>alert('Please correct the errors in the form!');</script>";
-        echo "oi";
-
-        sleep(5);
+    $i = 1;
+    while ($i <= 10) {
+        echo $i++;  /* the printed value would be
+                   $i before the increment
+                   (post-increment) */
     }
+
+    // while (1 === 1) {
+
+    //     echo "<script>alert('Please correct the errors in the form!');</script>";
+
+    //     sleep(5);
+    // }
 
     // echo "<script type='javascript'>alert('Email enviado com Sucesso!');</script>";
 
