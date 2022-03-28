@@ -29,7 +29,7 @@
 
 <?php
 
-while (1  === 1) {
+while (1 === 1) {
 
     echo "<script>alert('Please correct the errors in the form!');</script>";
 
