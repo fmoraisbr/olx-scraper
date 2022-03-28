@@ -166,7 +166,7 @@
                                 /* ------------------------ [START] Isolar String Valor */
 
                                 $captura3 = $matchesx[0][$value];
-                                $link3 = substr($captura3, 120, 200);
+                                $link3 = substr($captura3, 121, 200);
                                 $aspaslink3 = str_replace('</span>', '', $link3);
 
                                 echo "<td>" . $aspaslink3 . "</td>";
