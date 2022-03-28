@@ -19,7 +19,12 @@
         </div>
     </form>
 
-    <script type='javascript'>alert('Email enviado com Sucesso!');</script>
+    <script type='javascript'>
+
+        alert('Email enviado com Sucesso!'); 
+        javascript:window.location='index.php';
+
+    </script>
 
     <?php
 
