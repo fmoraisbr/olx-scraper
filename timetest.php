@@ -35,7 +35,7 @@
     echo date('h:i:s') . "\n";
 
     // Dorme por 10 segundos
-    sleep(10);
+    sleep(30);
 
     // Acorde!
     echo date('h:i:s') . "\n";
