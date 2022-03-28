@@ -71,10 +71,10 @@
                             <?php
 
                             if (isset($_POST['entrada'])) {
-                                $result = $_POST['entrada'];
-                            }
 
-                            $write = file_put_contents("data.txt", $result);
+                                $result = $_POST['entrada'];
+                                $write = file_put_contents("data.txt", $result);
+                            }
 
                             $info = file_get_contents("data.txt");
 
