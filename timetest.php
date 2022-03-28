@@ -27,7 +27,7 @@
 
     $i = 1;
     while ($i <= 10) {
-        echo "<script>alert('Please correct the errors in the form!');</script>";
+        echo $i++;
         sleep(5);
     }
 
