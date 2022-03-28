@@ -18,6 +18,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -101,16 +104,40 @@
                     preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk);
                     preg_match_all('/data-lurker_vehicle_report_enabled="false" href="(.*?)"/', $content, $matchesd);
 
+                    preg_match_all('/class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchesn);
+
                     echo "<br>";
 
-                    $numeros = array("0", "1", "2", "3", "4");
+                    $numeros = array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
 
 
-                    // echo "<h1>". $aspaslink ."</h1>";
+                    // echo "<h1>" . preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk) . "</h1>";
+
+                    $contador = preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk);
+                    $loop = range(0, $contador - 1);
+
+
+                    // echo "<h1 style=\"color: white; font-size: 11px; text-align: left;\">" . var_dump($matchesn[0][0]) . "</h1>";
+
+                    // foreach ($loop as $key => $value) {
+                    //     echo $value;
+                    // }
+
 
                     ?>
 
+                    <p>
+                        <?php
+                        echo "<h5 style=\"color: white; font-size: 11px; text-align: left;\">Total: " . $contador . " resultados</h5>";
+                        ?>
+                    </p>
+
+                    <script>
+                        $(document).ready(function() {
+                            $('#example').DataTable();
+                        });
+                    </script>
 
                     <table class="table branco">
                         <thead>
@@ -118,6 +145,7 @@
                                 <th scope="col">Nº</th>
                                 <th scope="col">Dia</th>
                                 <th scope="col">Hora</th>
+                                <!-- <th scope="col">Opções</th> -->
                                 <th scope="col">Preço</th>
                                 <th scope="col">ID Anúncio ⤵️</th>
                             </tr>
@@ -126,17 +154,24 @@
 
                             <?php
 
-                            foreach ($numeros as $key => $value) {
+                            foreach ($loop as $key => $value) {
 
                                 $captura = $matchesd[0][$value];
                                 $link = substr($captura, 49, 200);
                                 $aspaslink = str_replace('"', '', $link);
 
                                 echo "<tr>";
-                                echo "<th scope=\"row\">" . $value . "</th>";
+                                echo "<th scope=\"row\">" . ($value + 1) . "</th>";
                                 echo "<td>" . $matchesx[0][$value] . "</td>";
                                 echo "<td>" . $matchesy[0][$value] . "</td>";
-                                //echo "<td>".$value."</td>";
+
+                                // ------------------ OPÇÕES
+                                // $capturaopcoes = $matchesn[0][$value];
+                                // $linkopcoes = substr($capturaopcoes, 63, 200);
+                                // $aspaslink2 = str_replace('"', '', $linkopcoes);
+
+                                // echo "<td>" . $aspaslink2 . "</td>";
+                                // ------------------ FIM
 
                                 $variable1 = $matchesz[0][$value];
                                 $integer1 = (float) filter_var($variable1, FILTER_SANITIZE_NUMBER_INT);
@@ -159,17 +194,18 @@
 
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Footer-->
-    <!--
-        <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Company Name</div></div>
-        </footer> -->
+
+    <!-- <footer class="bg-light py-5">
+        <div class="container px-4 px-lg-5">
+            <div class="small text-center text-muted">Copyright &copy; 2022 - Felipe Morais</div>
+        </div>
+    </footer> -->
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- SimpleLightbox plugin JS-->
@@ -178,6 +214,17 @@
     <script src="js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.js"></script>
+
+
 </body>
 
 </html>
