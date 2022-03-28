@@ -105,9 +105,7 @@
 
                     $numeros = array("0", "1", "2", "3", "4");
 
-                    $captura = $matchesd[0][1];
-                    $link = substr($captura, 49, 200);
-                    $aspaslink = str_replace('"', '', $link);
+
 
                     // echo "<h1>". $aspaslink ."</h1>";
 
@@ -129,6 +127,10 @@
                             <?php
 
                             foreach ($numeros as $key => $value) {
+
+                                $captura = $matchesd[0][$value];
+                                $link = substr($captura, 49, 200);
+                                $aspaslink = str_replace('"', '', $link);
 
                                 echo "<tr>";
                                 echo "<th scope=\"row\">" . $value . "</th>";
