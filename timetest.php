@@ -25,6 +25,13 @@
 
     <?php
 
+    while (1  === 1) {
+
+        echo "<script>alert('Please correct the errors in the form!');</script>";
+
+        sleep(5);
+    }
+
     // echo "<script type='javascript'>alert('Email enviado com Sucesso!');</script>";
 
     // while (1  === 1) {
@@ -33,6 +40,7 @@
 
     //     sleep(30);
     // }
+
 
     ?>
 
