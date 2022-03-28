@@ -60,13 +60,13 @@
                         preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
                         preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
                         preg_match_all('/<span color="dark" title="(.*)" class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchest);
-                        preg_match_all('/<li class="sc-1fcmfeb-2 iezWpY"><a data-lurker-detail="list_id" data-lurker_list_id="(.*?)" data-lurker_is_featured="0" data-lurker_last_bump_age_secs="0" data-lurker_list_position="0" data-lurker_vehicle_report_enabled="false" href="(.*)" target="_blank" title="(.*)" class="fnmrjs-0 fyjObc">/', $content, $matchesk);
+                        preg_match_all('/<a data-lurker-detail="list_id" data-lurker_list_id="(.*?)" data-lurker_is_featured="0" data-lurker_last_bump_age_secs="0" data-lurker_list_position="0" data-lurker_vehicle_report_enabled="false" href="(.*)" target="_blank" title="(.*)" class="fnmrjs-0 fyjObc">/', $content, $matchesk);
 
                         echo "<br>";
 
                         $numeros = array("0", "1", "2", "3", "4");
                         
-                        // echo "<h1>".$matchesk[1][0]."</h1>";
+                        echo "<h1>".$matchesk[0][0]."</h1>";
                         
                         ?>
 
