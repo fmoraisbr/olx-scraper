@@ -25,11 +25,20 @@
 
     <?php
 
-    $i = 1;
-    while ($i <= 10) {
-        echo $i++;
-        //sleep(5);
-    }
+    // $i = 1;
+    // while ($i <= 10) {
+    //     echo $i++;
+    //     sleep(5);
+    // }
+
+    // Hora atual
+    echo date('h:i:s') . "\n";
+
+    // Dorme por 10 segundos
+    sleep(10);
+
+    // Acorde!
+    echo date('h:i:s') . "\n";
 
     // while (1 === 1) {
 
