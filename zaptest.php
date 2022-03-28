@@ -45,7 +45,8 @@
 
         $result = $_POST['entrada'];
 
-        send_whatsapp("$result");
+        send_whatsapp($result);
+        // send_whatsapp("Código do anúncio: AP00456");
 
         echo "<h1>" . $result . "</h1>";
     }
