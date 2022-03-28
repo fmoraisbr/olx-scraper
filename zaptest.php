@@ -45,7 +45,7 @@
 
         $result = $_POST['entrada'];
 
-        send_whatsapp($result);
+        send_whatsapp("$result");
 
         echo "<h1>" . $result . "</h1>";
     }
