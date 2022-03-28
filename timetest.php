@@ -22,7 +22,7 @@
         }
     </script>
 
-    <form class="form-inline d-flex justify-content-center" style="border-radius: 4px;" action="timetest.php" method="post" onsubmit="return validate(this);">
+    <form class="form-inline d-flex justify-content-center" style="border-radius: 4px;" action="timetest.php" method="post" onSubmit="return confirm('Do you want to submit?') ">
         <div class="input-group">
             <input name="entrada" type="text" class="form-control" placeholder="Link do resultado" id="form1">
             <div class="input-group-append">
