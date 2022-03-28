@@ -23,22 +23,22 @@
 
 <body id="page-top">
     <!-- Navigation-->
-    <!--
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
             </div>
-        </nav> -->
-    <!-- Masthead-->
+        </div>
+    </nav>
+    <!-- Masthead
     <header class="masthead">
 
         <div class="container px-4 px-lg-5 h-100">
@@ -46,155 +46,155 @@
                 <div class="col-lg-8 align-self-end">
                     <img src="https://logodownload.org/wp-content/uploads/2016/10/olx-logo-13.png" class="rounded" style="max-width: 50%;">
                     <!-- <h1 class="text-white font-weight-bold">OLX</h1> -->
-                    <hr class="divider" />
-                </div>
+    <hr class="divider" />
+    </div>
 
-                <div class="col-lg-8 align-self-baseline">
-                    <!-- <p class="text-white-75 mb-5">
+    <div class="col-lg-8 align-self-baseline">
+        <!-- <p class="text-white-75 mb-5">
                         https://df.olx.com.br/distrito-federal-e-regiao/brasilia/ra-xix---candangolandia/imoveis/aluguel?pe=1500&roe=3&ros=2&sf=1
                     </p> -->
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="mx-auto col">
-                                <form action="" method="post" class="form-inline d-flex justify-content-center" style="border-radius: 4px;">
-                                    <div class="input-group">
-                                        <input name="entrada" type="text" class="form-control" placeholder="Link do resultado" id="form1">
-                                        <div class="input-group-append">  
-                                            <button class="btn btn-primary" type="submit">Pesquisar</button>
-                                        </div>
-                                    </div>
-                                </form>
+        <div class="container">
+            <div class="row">
+                <div class="mx-auto col">
+                    <form action="" method="post" class="form-inline d-flex justify-content-center" style="border-radius: 4px;">
+                        <div class="input-group">
+                            <input name="entrada" type="text" class="form-control" placeholder="Link do resultado" id="form1">
+                            <div class="input-group-append">  
+                                <button class="btn btn-primary" type="submit">Pesquisar</button>
                             </div>
                         </div>
-                        <div class="row">
-
-                            <?php
-
-                            if (isset($_POST['entrada'])) {
-
-                                $result = $_POST['entrada'];
-                                $write = file_put_contents("data.txt", $result);
-                            }
-
-                            $info = file_get_contents("data.txt");
-
-                            echo "<p><h6 style=\"color: white; font-size: 12px;\">" . $info . "</h6></p>";
-
-                            ?>
-
-                        </div>
-                    </div>
-
-                    <!-- class="text-white-75 mb-5" -->
-
-                    <?php
-
-                    $content = file_get_contents($info);
-                    // $content = file_get_contents('https://df.olx.com.br/distrito-federal-e-regiao/brasilia/ra-xix---candangolandia/imoveis/aluguel?pe=1500&roe=3&ros=2&sf=1');
-
-                    preg_match_all('/<span color="dark" aria-label="(.*?)" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
-                    preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
-                    // preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
-                    preg_match_all('/class="sc-ifAKCX eoKYee">(.*?)<\/span>/', $content, $matchesz);
-                    preg_match_all('/<span color="dark" title="(.*)" class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchest);
-                    // preg_match_all('/<a data-lurker-detail="list_id" data-lurker_list_id="(.*?)" data-lurker_is_featured="0" data-lurker_last_bump_age_secs="0" data-lurker_list_position="0" data-lurker_vehicle_report_enabled="false" href="(.*)" target="_blank" title="(.*)" class="fnmrjs-0 fyjObc">/', $content, $matchesk);
-                    preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk);
-                    preg_match_all('/data-lurker_vehicle_report_enabled="false" href="(.*?)"/', $content, $matchesd);
-
-                    preg_match_all('/class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchesn);
-
-                    echo "<br>";
-
-                    $numeros = array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
-
-
-
-                    // echo "<h1>" . preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk) . "</h1>";
-
-                    $contador = preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk);
-                    $loop = range(0, $contador - 1);
-
-
-                    // echo "<h1 style=\"color: white; font-size: 11px; text-align: left;\">" . var_dump($matchesn[0][0]) . "</h1>";
-
-                    // foreach ($loop as $key => $value) {
-                    //     echo $value;
-                    // }
-
-
-                    ?>
-
-                    <p>
-                        <?php
-                        echo "<h5 style=\"color: white; font-size: 11px; text-align: left;\">Total: " . $contador . " resultados</h5>";
-                        ?>
-                    </p>
-
-                    <script>
-                        $(document).ready(function() {
-                            $('#example').DataTable();
-                        });
-                    </script>
-
-                    <table class="table branco">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nº</th>
-                                <th scope="col">Dia</th>
-                                <th scope="col">Hora</th>
-                                <!-- <th scope="col">Opções</th> -->
-                                <th scope="col">Preço</th>
-                                <th scope="col">ID Anúncio ⤵️</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <?php
-
-                            foreach ($loop as $key => $value) {
-
-                                $captura = $matchesd[0][$value];
-                                $link = substr($captura, 49, 200);
-                                $aspaslink = str_replace('"', '', $link);
-
-                                echo "<tr>";
-                                echo "<th scope=\"row\">" . ($value + 1) . "</th>";
-                                echo "<td>" . $matchesx[0][$value] . "</td>";
-                                echo "<td>" . $matchesy[0][$value] . "</td>";
-
-                                // ------------------ OPÇÕES
-                                // $capturaopcoes = $matchesn[0][$value];
-                                // $linkopcoes = substr($capturaopcoes, 63, 200);
-                                // $aspaslink2 = str_replace('"', '', $linkopcoes);
-
-                                // echo "<td>" . $aspaslink2 . "</td>";
-                                // ------------------ FIM
-
-                                $variable1 = $matchesz[0][$value];
-                                $integer1 = (float) filter_var($variable1, FILTER_SANITIZE_NUMBER_INT);
-
-                                if (($integer1 * (-1)) > 1300) {
-                                    echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "</td>";
-                                }
-                                if (($integer1 * (-1)) < 1300) {
-                                    echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
-                                }
-
-                                $variable2 = $matchesk[0][$value];
-                                $integer2 = (int) filter_var($variable2, FILTER_SANITIZE_NUMBER_INT);
-
-                                echo "<td><a href=\"" . $aspaslink . "\" target=\"_blank\">" . ($integer2 * (-1)) . "</a></td>";
-                                echo "</tr>";
-                            }
-
-                            ?>
-
-                        </tbody>
-                    </table>
+                    </form>
                 </div>
             </div>
+            <div class="row">
+
+                <?php
+
+                if (isset($_POST['entrada'])) {
+
+                    $result = $_POST['entrada'];
+                    $write = file_put_contents("data.txt", $result);
+                }
+
+                $info = file_get_contents("data.txt");
+
+                echo "<p><h6 style=\"color: white; font-size: 12px;\">" . $info . "</h6></p>";
+
+                ?>
+
+            </div>
         </div>
+
+        <!-- class="text-white-75 mb-5" -->
+
+        <?php
+
+        $content = file_get_contents($info);
+        // $content = file_get_contents('https://df.olx.com.br/distrito-federal-e-regiao/brasilia/ra-xix---candangolandia/imoveis/aluguel?pe=1500&roe=3&ros=2&sf=1');
+
+        preg_match_all('/<span color="dark" aria-label="(.*?)" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
+        preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
+        // preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
+        preg_match_all('/class="sc-ifAKCX eoKYee">(.*?)<\/span>/', $content, $matchesz);
+        preg_match_all('/<span color="dark" title="(.*)" class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchest);
+        // preg_match_all('/<a data-lurker-detail="list_id" data-lurker_list_id="(.*?)" data-lurker_is_featured="0" data-lurker_last_bump_age_secs="0" data-lurker_list_position="0" data-lurker_vehicle_report_enabled="false" href="(.*)" target="_blank" title="(.*)" class="fnmrjs-0 fyjObc">/', $content, $matchesk);
+        preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk);
+        preg_match_all('/data-lurker_vehicle_report_enabled="false" href="(.*?)"/', $content, $matchesd);
+
+        preg_match_all('/class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchesn);
+
+        echo "<br>";
+
+        $numeros = array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+
+
+
+        // echo "<h1>" . preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk) . "</h1>";
+
+        $contador = preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk);
+        $loop = range(0, $contador - 1);
+
+
+        // echo "<h1 style=\"color: white; font-size: 11px; text-align: left;\">" . var_dump($matchesn[0][0]) . "</h1>";
+
+        // foreach ($loop as $key => $value) {
+        //     echo $value;
+        // }
+
+
+        ?>
+
+        <p>
+            <?php
+            echo "<h5 style=\"color: white; font-size: 11px; text-align: left;\">Total: " . $contador . " resultados</h5>";
+            ?>
+        </p>
+
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable();
+            });
+        </script>
+
+        <table class="table branco">
+            <thead>
+                <tr>
+                    <th scope="col">Nº</th>
+                    <th scope="col">Dia</th>
+                    <th scope="col">Hora</th>
+                    <!-- <th scope="col">Opções</th> -->
+                    <th scope="col">Preço</th>
+                    <th scope="col">ID Anúncio ⤵️</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php
+
+                foreach ($loop as $key => $value) {
+
+                    $captura = $matchesd[0][$value];
+                    $link = substr($captura, 49, 200);
+                    $aspaslink = str_replace('"', '', $link);
+
+                    echo "<tr>";
+                    echo "<th scope=\"row\">" . ($value + 1) . "</th>";
+                    echo "<td>" . $matchesx[0][$value] . "</td>";
+                    echo "<td>" . $matchesy[0][$value] . "</td>";
+
+                    // ------------------ OPÇÕES
+                    // $capturaopcoes = $matchesn[0][$value];
+                    // $linkopcoes = substr($capturaopcoes, 63, 200);
+                    // $aspaslink2 = str_replace('"', '', $linkopcoes);
+
+                    // echo "<td>" . $aspaslink2 . "</td>";
+                    // ------------------ FIM
+
+                    $variable1 = $matchesz[0][$value];
+                    $integer1 = (float) filter_var($variable1, FILTER_SANITIZE_NUMBER_INT);
+
+                    if (($integer1 * (-1)) > 1300) {
+                        echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "</td>";
+                    }
+                    if (($integer1 * (-1)) < 1300) {
+                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
+                    }
+
+                    $variable2 = $matchesk[0][$value];
+                    $integer2 = (int) filter_var($variable2, FILTER_SANITIZE_NUMBER_INT);
+
+                    echo "<td><a href=\"" . $aspaslink . "\" target=\"_blank\">" . ($integer2 * (-1)) . "</a></td>";
+                    echo "</tr>";
+                }
+
+                ?>
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
     </header>
 
     <!-- Footer-->
