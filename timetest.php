@@ -17,14 +17,13 @@
                 <button class="btn btn-primary" type="submit">Pesquisar</button>
             </div>
         </div>
+        <script type='javascript'>
+
+            alert('Email enviado com Sucesso!'); 
+javascript:window.location='index.php';
+
+</script>
     </form>
-
-    <script type='javascript'>
-
-        alert('Email enviado com Sucesso!'); 
-        javascript:window.location='index.php';
-
-    </script>
 
     <?php
 
