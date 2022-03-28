@@ -39,6 +39,7 @@
         </nav> -->
     <!-- Masthead-->
     <header class="masthead">
+
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
@@ -46,30 +47,69 @@
                     <!-- <h1 class="text-white font-weight-bold">OLX</h1> -->
                     <hr class="divider" />
                 </div>
+
                 <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 mb-5">
-                    https://df.olx.com.br/distrito-federal-e-regiao/brasilia/ra-xix---candangolandia/imoveis/aluguel?pe=1500&roe=3&ros=2&sf=1 
-                    </p>
-                    <p class="text-white-75 mb-5">
+                    <!-- <p class="text-white-75 mb-5">
+                        https://df.olx.com.br/distrito-federal-e-regiao/brasilia/ra-xix---candangolandia/imoveis/aluguel?pe=1500&roe=3&ros=2&sf=1
+                    </p> -->
 
-                        <?php
+                    <div class="container">
+                        <div class="row">
+                            <div class="mx-auto col">
+                                <form action="" method="post" class="form-inline d-flex justify-content-center" style="border-radius: 4px;">
+                                    <div class="input-group">
+                                        <input name="entrada" type="text" class="form-control" placeholder="Link do resultado" id="form1">
+                                        <div class="input-group-append">  
+                                            <button class="btn btn-primary" type="submit">Pesquisar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
 
-                        $content = file_get_contents('https://df.olx.com.br/distrito-federal-e-regiao/brasilia/ra-xix---candangolandia/imoveis/aluguel?pe=1500&roe=3&ros=2&sf=1');
+                            <?php
 
-                        preg_match_all('/<span color="dark" aria-label="(.*?)" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
-                        preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
-                        preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
-                        preg_match_all('/<span color="dark" title="(.*)" class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchest);
-                        // preg_match_all('/<a data-lurker-detail="list_id" data-lurker_list_id="(.*?)" data-lurker_is_featured="0" data-lurker_last_bump_age_secs="0" data-lurker_list_position="0" data-lurker_vehicle_report_enabled="false" href="(.*)" target="_blank" title="(.*)" class="fnmrjs-0 fyjObc">/', $content, $matchesk);
-                        preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk);
+                            $result = $_POST['entrada'];
 
-                        echo "<br>";
+                            $write = file_put_contents("data.txt", $result);
 
-                        $numeros = array("0", "1", "2", "3", "4");
-                        
-                        echo "<h1>".$matchesk."</h1>";
-                        
-                        ?>
+                            $info = file_get_contents("data.txt");
+
+                            echo "<p><h6 style=\"color: white; font-size: 12px;\">" . $info . "</h6></p>";
+
+                            ?>
+
+                        </div>
+                    </div>
+
+                    <!-- class="text-white-75 mb-5" -->
+
+                    <?php
+
+                    $content = file_get_contents($info);
+                    // $content = file_get_contents('https://df.olx.com.br/distrito-federal-e-regiao/brasilia/ra-xix---candangolandia/imoveis/aluguel?pe=1500&roe=3&ros=2&sf=1');
+
+                    preg_match_all('/<span color="dark" aria-label="(.*?)" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
+                    preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
+                    // preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
+                    preg_match_all('/class="sc-ifAKCX eoKYee">(.*?)<\/span>/', $content, $matchesz);
+                    preg_match_all('/<span color="dark" title="(.*)" class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchest);
+                    // preg_match_all('/<a data-lurker-detail="list_id" data-lurker_list_id="(.*?)" data-lurker_is_featured="0" data-lurker_last_bump_age_secs="0" data-lurker_list_position="0" data-lurker_vehicle_report_enabled="false" href="(.*)" target="_blank" title="(.*)" class="fnmrjs-0 fyjObc">/', $content, $matchesk);
+                    preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk);
+                    preg_match_all('/data-lurker_vehicle_report_enabled="false" href="(.*?)"/', $content, $matchesd);
+
+                    echo "<br>";
+
+                    $numeros = array("0", "1", "2", "3", "4");
+
+                    $captura = $matchesd[0][1];
+                    $link = substr($captura, 49, 200);
+                    $aspaslink = str_replace('"', '', $link);
+
+                    // echo "<h1>". $aspaslink ."</h1>";
+
+                    ?>
 
 
                     <table class="table branco">
@@ -79,7 +119,7 @@
                                 <th scope="col">Dia</th>
                                 <th scope="col">Hora</th>
                                 <th scope="col">Preço</th>
-                                <th scope="col">ID</th>
+                                <th scope="col">ID Anúncio ⤵️</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -93,8 +133,21 @@
                                 echo "<td>" . $matchesx[0][$value] . "</td>";
                                 echo "<td>" . $matchesy[0][$value] . "</td>";
                                 //echo "<td>".$value."</td>";
-                                echo "<td>" . $matchesz[0][$value] . "</td>";
-                                echo "<td>" . $matchesk[1][$value] . "</td>";
+
+                                $variable1 = $matchesz[0][$value];
+                                $integer1 = (float) filter_var($variable1, FILTER_SANITIZE_NUMBER_INT);
+
+                                if (($integer1 * (-1)) > 1300) {
+                                    echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "</td>";
+                                }
+                                if (($integer1 * (-1)) < 1300) {
+                                    echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
+                                }
+
+                                $variable2 = $matchesk[0][$value];
+                                $integer2 = (int) filter_var($variable2, FILTER_SANITIZE_NUMBER_INT);
+
+                                echo "<td><a href=\"" . $aspaslink . "\" target=\"_blank\">" . ($integer2 * (-1)) . "</a></td>";
                                 echo "</tr>";
                             }
 
@@ -102,7 +155,7 @@
 
                         </tbody>
                     </table>
-                    </p>
+
                 </div>
             </div>
         </div>

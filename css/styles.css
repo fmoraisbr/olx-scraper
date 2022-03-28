@@ -236,11 +236,11 @@ sup {
 }
 
 a {
-  color: #f4623a;
-  text-decoration: underline;
+  color: #c4c4c4;
+  text-decoration: none;
 }
 a:hover {
-  color: #c34e2e;
+  color: #89b7fd;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -11464,4 +11464,8 @@ header.masthead h1, header.masthead .h1 {
 
 table.table.branco {
   color: white;
+}
+
+input#form1 {
+  border-radius: 4px!important;
 }
