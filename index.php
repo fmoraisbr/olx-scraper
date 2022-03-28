@@ -193,10 +193,10 @@
                                     echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
                                 }
 
+                                /* ------------------------ [START] Link ID Anúncio */
+
                                 $variable2 = $matchesk[0][$value];
                                 $integer2 = (int) filter_var($variable2, FILTER_SANITIZE_NUMBER_INT);
-
-                                /* ------------------------ [START] Link ID Anúncio */
 
                                 $captura = $matchesd[0][$value];
                                 $link = substr($captura, 49, 200);
