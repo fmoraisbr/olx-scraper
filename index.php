@@ -171,7 +171,7 @@
                                 $aspaslink3 = str_replace('>', '', $link3);
                                 //$aspaslink3 = str_replace('"', '', $link3);
 
-                                if ($aspaslink3 === "oje") {
+                                if ($aspaslink3 == "oje") {
                                     echo "<td>H" . $aspaslink3 . "</td>";
                                 }
 
