@@ -128,7 +128,7 @@
 
                     <p>
                         <?php
-                        echo "<h5 style=\"color: white; font-size: 11px; text-align: left;\">Total: " . $contador . " resultados</h5><br/>" . var_dump($matchesz);
+                        echo "<h5 style=\"color: white; font-size: 11px; text-align: left;\">Total: " . $contador . " resultados</h5><br/>" . $matchesz[0][10];
                         ?>
                     </p>
 
