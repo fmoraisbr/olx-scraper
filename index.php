@@ -249,11 +249,11 @@
                                 echo "</tr>";
                             }
 
-                            echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1>";
-
                             if ($link3 === "Hoje") {
                                 $mensagem = "Alerta de Aluguel ID " . $aspaslink;
                                 echo "<h1> FUNCIONANDO OF! " . $link3 . " </h1>";
+                            } else {
+                                echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1>";
                             }
 
                             foreach ($loop as $key => $value) {
