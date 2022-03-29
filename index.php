@@ -163,15 +163,15 @@
 
                                 /* [1] ------------------------ [END] Contador */
 
-                                /* [2] ------------------------ [START] Isolar String "Valor" */
+                                /* [2] ------------------------ [START] Dia */
 
                                 $captura3 = $matchesx[0][$value];
-                                $link3 = substr($captura3, 121, 200);
+                                $link3 = substr($captura3, 120, 200);
                                 $aspaslink3 = str_replace('</span>', '', $link3);
 
                                 echo "<td>" . $aspaslink3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
 
-                                /* [2] ------------------------ [END] Isolar String "Valor" */
+                                /* [2] ------------------------ [END] Dia */
 
                                 /* [3] ------------------------ [START] Hora */
 
