@@ -191,19 +191,22 @@
                                 if (($integer1 * (-1)) > 1300) {
                                     if (empty($integer1)) {
                                         if (isset($integer1)) {
-                                            echo "<td style=\"color: white;\">---" . $integer1 . "</td>";
+                                            echo "<td style=\"color: white;\">---</td>";
                                         }
+                                    }
+                                    if (isset($integer1)) {
+                                        echo "<td style=\"color: white;\">---</td>";
                                     } else {
-                                        echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "+" . $integer1 . "</td>";
+                                        echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "</td>";
                                     }
                                 }
                                 if (($integer1 * (-1)) < 1300) {
                                     if (empty($integer1)) {
-                                        if (isset($integer1)) {
-                                            echo "<td style=\"color: white;\">---" . $integer1 . "</td>";
-                                        }
+                                    }
+                                    if (isset($integer1)) {
+                                        echo "<td style=\"color: white;\">---</td>";
                                     } else {
-                                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "+" . $integer1 . "</td>";
+                                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
                                     }
                                 }
 
