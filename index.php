@@ -166,7 +166,7 @@
                                 /* [2] ------------------------ [START] Dia */
 
                                 $captura3 = $matchesx[0][$value];
-                                $link3 = substr($captura3, 78, 200);
+                                $link3 = substr($captura3, 59, 200);
                                 $aspaslink3 = str_replace('>', '', $link3);
 
                                 echo "<td>" . $captura3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
