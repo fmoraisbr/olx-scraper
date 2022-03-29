@@ -250,7 +250,7 @@
 
 
                                 if ($link3 === "Hoje") {
-                                    $mensagem = "Alerta de Aluguel: %0a \n <br/> "
+                                    $mensagem = "Alerta de Aluguel ⤵️\n\n"
                                         . $aspaslink;
                                     send_whatsapp($mensagem);
                                 } else {
