@@ -31,6 +31,9 @@
 
     echo "<h1>" . $info . "</h1>";
 
+    $var1 = "<h1> Olá \"fulano de tal\" </h1>";
+    echo str_replace('"', '', $var1);
+
     ?>
 </body>
 
