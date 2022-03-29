@@ -190,10 +190,18 @@
                                 $integer1 = (float) filter_var($variable1, FILTER_SANITIZE_NUMBER_INT);
 
                                 if (($integer1 * (-1)) > 1300) {
-                                    echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "</td>";
+                                    if (empty($integer1)) {
+                                        echo "<td style=\"color: white;\">NULL</td>";
+                                    } else {
+                                        echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "</td>";
+                                    }
                                 }
                                 if (($integer1 * (-1)) < 1300) {
-                                    echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
+                                    if (empty($integer1)) {
+                                        echo "<td style=\"color: white;\">NULL</td>";
+                                    } else {
+                                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
+                                    }
                                 }
 
                                 /* [4] ------------------------ [END] Valor em R$ */
