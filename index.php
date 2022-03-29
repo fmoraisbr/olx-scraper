@@ -171,7 +171,9 @@
                                 $aspaslink3 = str_replace('>', '', $link3);
                                 //$aspaslink3 = str_replace('"', '', $link3);
 
-                                echo "<td>" . $aspaslink3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
+                                if ($aspaslink3 === "oje") {
+                                    echo "<td>H" . $aspaslink3 . "</td>";
+                                }
 
                                 /* [2] ------------------------ [END] Dia */
 
