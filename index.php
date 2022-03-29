@@ -174,6 +174,7 @@
                                     $aspaslink3 = str_replace('>', '', $link3);
                                     echo "<td>" . $aspaslink3 . "</td>";
                                 } else {
+                                    $aspaslink3 = str_replace('>', '', $link3);
                                     echo "<td>" . $aspaslink3 . "</td>";
                                 }
 
