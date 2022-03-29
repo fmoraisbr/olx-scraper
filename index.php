@@ -206,7 +206,7 @@
                                     if (isset($integer1)) {
                                         echo "<td style=\"color: white;\">---</td>";
                                     } else {
-                                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
+                                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>"; //
                                     }
                                 }
 
