@@ -170,7 +170,7 @@
                                 $link3 = substr($captura3, 59, 200);
                                 $aspaslink3 = str_replace('</span>', '', $link3);
 
-                                $integerdia = (float) filter_var($aspaslink3, FILTER_SANITIZE_NUMBER_INT);
+                                $integerdia = (int) filter_var($aspaslink3, FILTER_SANITIZE_NUMBER_INT);
 
                                 echo "<td>" . $aspaslink3 . "+ " . $integerdia . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
 
