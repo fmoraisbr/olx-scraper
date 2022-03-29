@@ -200,7 +200,7 @@
                                 if (($integer1 * (-1)) < 1300) {
                                     if (empty($integer1)) {
                                         if (isset($integer1)) {
-                                            echo "<td style=\"color: white;\">NULL</td>";
+                                            echo "<td style=\"color: white;\">---</td>";
                                         }
                                     } else {
                                         echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
