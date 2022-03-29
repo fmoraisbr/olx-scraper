@@ -94,7 +94,7 @@
                     $content = file_get_contents($info);
                     // $content = file_get_contents('https://df.olx.com.br/distrito-federal-e-regiao/brasilia/ra-xix---candangolandia/imoveis/aluguel?pe=1500&roe=3&ros=2&sf=1');
 
-                    preg_match_all('/class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
+                    preg_match_all('/aria-label(.*) class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
                     // preg_match_all('/<span color="dark" aria-label="(.*?)" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
                     preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
                     // preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
@@ -170,11 +170,7 @@
                                 $link3 = substr($captura3, 59, 200);
                                 $aspaslink3 = str_replace('</span>', '', $link3);
 
-                                $integerdia = (int) filter_var($aspaslink3, FILTER_SANITIZE_NUMBER_INT);
-
-                                if ($integerdia == 0) {
-                                    echo "<td>" . $aspaslink3 . "+ " . $integerdia . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
-                                }
+                                echo "<td>" . $aspaslink3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
 
                                 /* [2] ------------------------ [END] Dia */
 
