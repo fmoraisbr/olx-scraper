@@ -94,7 +94,7 @@
                     $content = file_get_contents($info);
                     // $content = file_get_contents('https://df.olx.com.br/distrito-federal-e-regiao/brasilia/ra-xix---candangolandia/imoveis/aluguel?pe=1500&roe=3&ros=2&sf=1');
 
-                    preg_match_all('/>.<\/span>/', $content, $matchesx);
+                    preg_match_all('/>(.*)<\/span>/', $content, $matchesx);
                     // preg_match_all('/<span color="dark" aria-label="(.*?)" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchesx);
                     preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
                     // preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
@@ -177,10 +177,10 @@
                                 /* [3] ------------------------ [START] Hora */
 
                                 $captura4 = $matchesy[0][$value];
-                                $link4 = substr($captura4, 0, 200);
+                                $link4 = substr($captura4, 119, 200);
                                 $aspaslink4 = str_replace('</span>', '', $link4); // echo "<td>" . $matchesy[0][$value] . "</td>";
 
-                                echo "<td>" . $aspaslink4 . "</td>";
+                                echo "<td>" . $captura4 . "</td>";
 
                                 /* [3] ------------------------ [END] Hora */
 
