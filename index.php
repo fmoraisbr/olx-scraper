@@ -128,7 +128,7 @@
 
                     <p>
                         <?php
-                        echo "<h5 style=\"color: white; font-size: 11px; text-align: left;\">Total: " . $contador . " resultados</h5><br/>" . $matchesz[0][14];
+                        echo "<h5 style=\"color: white; font-size: 11px; text-align: left;\">Total: " . $contador . " resultados</h5><br/>" . $matchesz[0][22];
                         ?>
                     </p>
 
@@ -193,20 +193,17 @@
                                         if (isset($integer1)) {
                                             echo "<td style=\"color: white;\">---</td>";
                                         }
-                                    }
-                                    if (isset($integer1)) {
-                                        echo "<td style=\"color: white;\">---</td>";
                                     } else {
                                         echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "</td>";
                                     }
                                 }
                                 if (($integer1 * (-1)) < 1300) {
                                     if (empty($integer1)) {
-                                    }
-                                    if (isset($integer1)) {
-                                        echo "<td style=\"color: white;\">---</td>";
+                                        if (isset($integer1)) {
+                                            echo "<td style=\"color: white;\">---</td>";
+                                        }
                                     } else {
-                                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>"; //
+                                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
                                     }
                                 }
 
