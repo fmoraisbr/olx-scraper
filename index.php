@@ -172,7 +172,9 @@
 
                                 $integerdia = (int) filter_var($aspaslink3, FILTER_SANITIZE_NUMBER_INT);
 
-                                echo "<td>" . $aspaslink3 . "+ " . $integerdia . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
+                                if ($integerdia != 0) {
+                                    echo "<td>" . $aspaslink3 . "+ " . $integerdia . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
+                                }
 
                                 /* [2] ------------------------ [END] Dia */
 
