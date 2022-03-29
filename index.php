@@ -249,17 +249,12 @@
                                 echo "</tr>";
                             }
 
-                            if ($link3 === "Hoje") {
-                                $mensagem = "Alerta de Aluguel ID " . $aspaslink;
-                                echo "<h1> FUNCIONANDO OF! " . $link3 . " </h1>";
-                            } else {
-                                echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1>";
-                            }
-
                             foreach ($loop as $key => $value) {
                                 if ($link3 === "Hoje") {
                                     $mensagem = "Alerta de Aluguel ID " . $aspaslink;
                                     send_whatsapp($mensagem);
+                                } else {
+                                    echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1>";
                                 }
                             }
 
