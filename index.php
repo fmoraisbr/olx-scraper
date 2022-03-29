@@ -170,7 +170,7 @@
                                 $link3 = substr($captura3, 78, 200);
                                 $aspaslink3 = str_replace('</span>', '', $link3);
 
-                                echo "<td>AAAA" . $aspaslink3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
+                                echo "<td>AAAA" . $captura3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
 
                                 /* [2] ------------------------ [END] Dia */
 
