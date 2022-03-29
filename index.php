@@ -247,9 +247,8 @@
                                 /* [5] ------------------------ [END] Link ID Anúncio */
 
                                 echo "</tr>";
-                            }
 
-                            foreach ($loop as $key => $value) {
+
                                 if ($link3 === "Hoje") {
                                     $mensagem = "Alerta de Aluguel ID " . $aspaslink;
                                     send_whatsapp($mensagem);
