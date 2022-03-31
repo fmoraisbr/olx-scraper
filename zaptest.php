@@ -54,11 +54,11 @@
 
     $cont3 = 1;
 
-    if ($cont3 === 1) {
-        send_whatsapp("Código do anúncio: AP00456");
-    }
+    // if ($cont3 === 1) {
+    //     send_whatsapp("Código do anúncio: AP00456");
+    // }
 
-    // send_whatsapp("Código do anúncio: AP00456");
+    send_whatsapp("Código do anúncio: AP00456");
 
 
     ?>
