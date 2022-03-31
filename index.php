@@ -276,7 +276,7 @@
 =======
 
                                 if ($link3 === "Hoje") {
-                                    $mensagem = "Alerta de Aluguel ⤵️\n\n"
+                                    $mensagem = "Alerta de Aluguel: %0a \n <br/> "
                                         . $aspaslink;
                                     send_whatsapp($mensagem);
                                 } else {
