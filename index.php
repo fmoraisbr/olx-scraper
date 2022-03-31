@@ -269,9 +269,20 @@
 
                                 echo "</tr>";
 
+<<<<<<< HEAD
                                 // $init = 1;
                                 // echo "<h1>" . ($integer1 * (-1)) . "</h1>";
                                 // echo "<h3>" . (int)$init++ . "</h3>";
+=======
+
+                                if ($link3 === "Hoje") {
+                                    $mensagem = "Alerta de Aluguel ⤵️\n\n"
+                                        . $aspaslink;
+                                    send_whatsapp($mensagem);
+                                } else {
+                                    echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1><br/>";
+                                }
+>>>>>>> parent of 4a4854e (Alteração)
                             }
 
                             ?>
