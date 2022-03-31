@@ -158,6 +158,30 @@
 
                             <?php
 
+
+                            function send_whatsapp($message = "Test")
+                            {
+
+                                $phone = "+556186535340";  // Enter your phone number here
+                                $apikey = "288162";       // Enter your personal apikey received in step 3 above
+
+                                $url = 'https://api.callmebot.com/whatsapp.php?source=php&phone=' . $phone . '&text=' . urlencode($message) . '&apikey=' . $apikey;
+
+                                if ($ch = curl_init($url)) {
+                                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                                    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                                    $html = curl_exec($ch);
+                                    $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                                    // echo "Output:".$html;  // you can print the output for troubleshooting
+                                    curl_close($ch);
+                                    return (int) $status;
+                                } else {
+                                    return false;
+                                }
+                            }
+
+
+
                             foreach ($loop as $key => $value) {
 
                                 echo "<tr>";
@@ -170,22 +194,21 @@
 
                                 /* [2] ------------------------ [START] Dia */
 
-                                $captura3 = $matchesx[0][$value];
-                                $link3 = substr($captura3, 120, 200);
-                                $aspaslink3 = str_replace('</span>', '', $link3);
+                                $captura3 = $matchesx[1][$value];
+                                $link3 = substr($captura3, 23, 200);
                                 $aspaslink3 = str_replace('>', '', $link3);
 
-                                echo "<td>" . $aspaslink3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
+                                echo "<td>" . $link3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
 
                                 /* [2] ------------------------ [END] Dia */
 
                                 /* [3] ------------------------ [START] Hora */
 
                                 $captura4 = $matchesy[0][$value];
-                                $link4 = substr($captura4, 78, 200);
+                                $link4 = substr($captura4, 119, 200);
                                 $aspaslink4 = str_replace('</span>', '', $link4); // echo "<td>" . $matchesy[0][$value] . "</td>";
 
-                                echo "<td>" . $aspaslink4 . "</td>";
+                                echo "<td>" . $captura4 . "</td>";
 
                                 /* [3] ------------------------ [END] Hora */
 
@@ -213,6 +236,7 @@
                                 $verificarint = ($integer1 * (-1));
 
                                 if (($integer1 * (-1)) > 1300) {
+<<<<<<< HEAD
                                     if (empty($verificarint)) {
                                         echo "<td style=\"color: white;\">R$ 0,00</td>";
                                     }
@@ -226,6 +250,23 @@
                                     }
                                     if (isset($verificarint)) {
                                         echo "<td style=\"color: lawngreen;\">R$ " . $verificarint . "</td>";
+=======
+                                    if (empty($integer1)) {
+                                        if (isset($integer1)) {
+                                            echo "<td style=\"color: white;\">---</td>";
+                                        }
+                                    } else {
+                                        echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "</td>";
+                                    }
+                                }
+                                if (($integer1 * (-1)) < 1300) {
+                                    if (empty($integer1)) {
+                                        if (isset($integer1)) {
+                                            echo "<td style=\"color: white;\">---</td>";
+                                        }
+                                    } else {
+                                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
+>>>>>>> 4f048b1263e718cf4e0a54dd1e6ddd7ef10a0b51
                                     }
                                 }
 
@@ -246,9 +287,20 @@
 
                                 echo "</tr>";
 
+<<<<<<< HEAD
                                 // $init = 1;
                                 // echo "<h1>" . ($integer1 * (-1)) . "</h1>";
                                 // echo "<h3>" . (int)$init++ . "</h3>";
+=======
+
+                                if ($link3 === "Hoje") {
+                                    $mensagem = "Alerta de Aluguel ⤵️\n\n"
+                                        . $aspaslink;
+                                    send_whatsapp($mensagem);
+                                } /*else {
+                                    echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1><br/>";
+                                }*/
+>>>>>>> 4f048b1263e718cf4e0a54dd1e6ddd7ef10a0b51
                             }
 
                             ?>
