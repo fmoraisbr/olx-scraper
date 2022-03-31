@@ -52,7 +52,6 @@
         echo "<h1>" . $result . "</h1>";
     }
 
-<<<<<<< HEAD
     $cont3 = 1;
 
     if ($cont3 === 1) {
@@ -62,8 +61,6 @@
     // send_whatsapp("Código do anúncio: AP00456");
 
 
-=======
->>>>>>> parent of 4f048b1 (Alteração)
     ?>
 
 </body>

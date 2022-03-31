@@ -269,11 +269,6 @@
 
                                 echo "</tr>";
 
-<<<<<<< HEAD
-                                // $init = 1;
-                                // echo "<h1>" . ($integer1 * (-1)) . "</h1>";
-                                // echo "<h3>" . (int)$init++ . "</h3>";
-=======
 
                                 if ($link3 === "Hoje") {
                                     $mensagem = "Alerta de Aluguel: %0a \n <br/> "
@@ -282,7 +277,6 @@
                                 } else {
                                     echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1><br/>";
                                 }
->>>>>>> parent of 4a4854e (Alteração)
                             }
 
                             ?>
