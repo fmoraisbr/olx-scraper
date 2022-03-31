@@ -52,6 +52,12 @@
         echo "<h1>" . $result . "</h1>";
     }
 
+    $cont3 = 1;
+
+    if ($cont3 === 1) {
+        send_whatsapp("Código do anúncio: AP00456");
+    }
+
     ?>
 
 </body>

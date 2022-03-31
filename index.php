@@ -24,20 +24,20 @@
 <body id="page-top">
     <!-- Navigation-->
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#page-top">OLX Scraper</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <!-- <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Login</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
     <!-- Masthead-->
     <header class="masthead">
@@ -98,12 +98,17 @@
                     preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
                     // preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
                     preg_match_all('/class="sc-ifAKCX eoKYee">(.*?)<\/span>/', $content, $matchesz);
+                    /* class="sc-ifAKCX eoKYee">R$ 1.300</span> */
+
                     preg_match_all('/<span color="dark" title="(.*)" class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchest);
                     // preg_match_all('/<a data-lurker-detail="list_id" data-lurker_list_id="(.*?)" data-lurker_is_featured="0" data-lurker_last_bump_age_secs="0" data-lurker_list_position="0" data-lurker_vehicle_report_enabled="false" href="(.*)" target="_blank" title="(.*)" class="fnmrjs-0 fyjObc">/', $content, $matchesk);
                     preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk);
                     preg_match_all('/data-lurker_vehicle_report_enabled="false" href="(.*?)"/', $content, $matchesd);
 
                     preg_match_all('/class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchesn);
+
+                    preg_match_all('/class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchesw);
+                    // preg_match_all('/class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">3 quartos | 1 vaga<\/span>/', $content, $matchesw);
 
                     echo "<br>";
 
@@ -144,7 +149,7 @@
                                 <th scope="col">Nº</th>
                                 <th scope="col">Dia</th>
                                 <th scope="col">Hora</th>
-                                <!-- <th scope="col">Opções</th> -->
+                                <th scope="col">Opções</th>
                                 <th scope="col">Preço</th>
                                 <th scope="col">ID Anúncio ⤵️</th>
                             </tr>
@@ -184,27 +189,43 @@
 
                                 /* [3] ------------------------ [END] Hora */
 
+                                /* [4] ------------------------ [START] Opções */
+
+                                $captura5 = $matchesw[0][$value];
+                                $link5 = substr($captura5, 63, 9);
+                                $aspaslink5 = str_replace('</span>', '', $link5); // echo "<td>" . $matchesy[0][$value] . "</td>";
+
+                                $aspaslink6 = str_replace(' quartos', '', $link5); // echo "<td>" . $matchesy[0][$value] . "</td>";
+                                $integer2 = (int) filter_var($aspaslink6, FILTER_SANITIZE_NUMBER_INT);
+
+                                if ($integer2 >= 3) {
+                                    echo "<td style=\"color: aqua;\">" . $aspaslink5 . "</td>";
+                                } else {
+                                    echo "<td>" . $aspaslink5 . "</td>";
+                                }
+
+                                /* [4] ------------------------ [END] Opções */
+
                                 /* [4] ------------------------ [START] Valor em R$ */
 
                                 $variable1 = $matchesz[0][$value];
                                 $integer1 = (float) filter_var($variable1, FILTER_SANITIZE_NUMBER_INT);
+                                $verificarint = ($integer1 * (-1));
 
                                 if (($integer1 * (-1)) > 1300) {
-                                    if (empty($integer1)) {
-                                        if (isset($integer1)) {
-                                            echo "<td style=\"color: white;\">NULL</td>";
-                                        }
-                                    } else {
-                                        echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "</td>";
+                                    if (empty($verificarint)) {
+                                        echo "<td style=\"color: white;\">R$ 0,00</td>";
+                                    }
+                                    if (isset($verificarint)) {
+                                        echo "<td style=\"color: red;\">R$ " . $verificarint . "</td>";
                                     }
                                 }
-                                if (($integer1 * (-1)) < 1300) {
-                                    if (empty($integer1)) {
-                                        if (isset($integer1)) {
-                                            echo "<td style=\"color: white;\">NULL</td>";
-                                        }
-                                    } else {
-                                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
+                                if (($integer1 * (-1)) < 1300) { //lawngreen
+                                    if (empty($verificarint)) {
+                                        echo "<td style=\"color: white;\">R$ 0,00</td>";
+                                    }
+                                    if (isset($verificarint)) {
+                                        echo "<td style=\"color: lawngreen;\">R$ " . $verificarint . "</td>";
                                     }
                                 }
 
@@ -224,6 +245,10 @@
                                 /* [5] ------------------------ [END] Link ID Anúncio */
 
                                 echo "</tr>";
+
+                                // $init = 1;
+                                // echo "<h1>" . ($integer1 * (-1)) . "</h1>";
+                                // echo "<h3>" . (int)$init++ . "</h3>";
                             }
 
                             ?>
