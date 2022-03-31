@@ -248,12 +248,12 @@
                                 echo "</tr>";
 
 
-                                if ($link3 === "Hoje") {
-                                    $mensagem = "Alerta de Aluguel: %0a /n <br/> " . $aspaslink;
-                                    send_whatsapp($mensagem);
-                                } else {
-                                    echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1><br/>";
-                                }
+                                // if ($link3 === "Hoje") {
+                                //     $mensagem = "Alerta de Aluguel: %0a /n <br/> " . $aspaslink;
+                                //     send_whatsapp($mensagem);
+                                // } else {
+                                //     echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1><br/>";
+                                // }
                             }
 
                             ?>
