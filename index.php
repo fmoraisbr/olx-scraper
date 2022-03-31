@@ -236,7 +236,6 @@
                                 $verificarint = ($integer1 * (-1));
 
                                 if (($integer1 * (-1)) > 1300) {
-<<<<<<< HEAD
                                     if (empty($verificarint)) {
                                         echo "<td style=\"color: white;\">R$ 0,00</td>";
                                     }
@@ -250,23 +249,6 @@
                                     }
                                     if (isset($verificarint)) {
                                         echo "<td style=\"color: lawngreen;\">R$ " . $verificarint . "</td>";
-=======
-                                    if (empty($integer1)) {
-                                        if (isset($integer1)) {
-                                            echo "<td style=\"color: white;\">---</td>";
-                                        }
-                                    } else {
-                                        echo "<td style=\"color: red;\">R$ " . ($integer1 * (-1)) . "</td>";
-                                    }
-                                }
-                                if (($integer1 * (-1)) < 1300) {
-                                    if (empty($integer1)) {
-                                        if (isset($integer1)) {
-                                            echo "<td style=\"color: white;\">---</td>";
-                                        }
-                                    } else {
-                                        echo "<td style=\"color: lawngreen;\">R$ " . ($integer1 * (-1)) . "</td>";
->>>>>>> 4f048b1263e718cf4e0a54dd1e6ddd7ef10a0b51
                                     }
                                 }
 
@@ -287,20 +269,9 @@
 
                                 echo "</tr>";
 
-<<<<<<< HEAD
                                 // $init = 1;
                                 // echo "<h1>" . ($integer1 * (-1)) . "</h1>";
                                 // echo "<h3>" . (int)$init++ . "</h3>";
-=======
-
-                                if ($link3 === "Hoje") {
-                                    $mensagem = "Alerta de Aluguel ⤵️\n\n"
-                                        . $aspaslink;
-                                    send_whatsapp($mensagem);
-                                } /*else {
-                                    echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1><br/>";
-                                }*/
->>>>>>> 4f048b1263e718cf4e0a54dd1e6ddd7ef10a0b51
                             }
 
                             ?>
