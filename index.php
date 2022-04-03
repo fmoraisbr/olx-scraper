@@ -272,9 +272,9 @@
                                     $mensagem = "Alerta de Aluguel ⤵️\n\n"
                                         . $aspaslink;
                                     send_whatsapp($mensagem);
-                                } else {
+                                } /*else {
                                     echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1><br/>";
-                                }
+                                }*/
                             }
 
                             ?>
