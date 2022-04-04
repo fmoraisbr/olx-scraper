@@ -276,10 +276,10 @@
                                 } /*else {
                                     echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1><br/>";
                                 }*/
-
-                                $timezap = "Aluguéis OLX 🕑\n\n_Update: " . date('d/m/Y H:i', time()) . "_";
-                                send_whatsapp($timezap);
                             }
+
+                            $timezap = "Aluguéis OLX 🕑\n\n_Update: " . date('d/m/Y H:i', time()) . "_";
+                            send_whatsapp($timezap);
 
                             ?>
 
