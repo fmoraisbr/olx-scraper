@@ -154,7 +154,7 @@
                     <p>
                         <?php
                         date_default_timezone_set('America/Sao_Paulo');
-                        echo "<h5 style=\"color: white; font-size: 11px; text-align: left;\">Total: " . $contador . " resultados<br/><span style=\"font-style: italic;\">Update: " . date('d/m/Y H:i', time()) . "</span></h5>";
+                        echo "<h5 style=\"color: white; font-size: 11px; text-align: left;\">Total: " . $contador . " resultados<br/><span style=\"font-style: italic; font-size: 0.70em;\">Update: " . date('d/m/Y H:i', time()) . "</span></h5>";
                         ?>
                     </p>
 

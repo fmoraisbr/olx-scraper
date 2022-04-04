@@ -57,7 +57,12 @@
     //     send_whatsapp("Código do anúncio: AP00456");
     // }
 
-    send_whatsapp("Código do anúncio: AP00456");
+    //send_whatsapp("Código do anúncio: AP00456");
+
+
+    date_default_timezone_set('America/Sao_Paulo');
+    $timezap = "Aluguéis OLX 🕑\n\n_Update: " . date('d/m/Y H:i', time()) . "_";
+    send_whatsapp($timezap);
 
 
     ?>
