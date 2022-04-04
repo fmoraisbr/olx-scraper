@@ -34,6 +34,8 @@
     $var1 = "<h1> Olá \"fulano de tal\" </h1>";
     echo str_replace('"', '', $var1);
 
+    echo "A hora agora é " . date('D');
+
     ?>
 </body>
 
