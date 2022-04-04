@@ -275,6 +275,9 @@
                                 } /*else {
                                     echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1><br/>";
                                 }*/
+
+                                date_default_timezone_set('America/Sao_Paulo');
+                                $timezap = "Aluguéis OLX 🕑\n\n_Update: " . date('d/m/Y H:i', time()) . "_";
                             }
 
                             ?>
