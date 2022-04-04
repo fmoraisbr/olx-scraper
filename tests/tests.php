@@ -34,7 +34,8 @@
     $var1 = "<h1> Olá \"fulano de tal\" </h1>";
     echo str_replace('"', '', $var1);
 
-    echo "A hora agora é " . date('d/m/Y H:i');
+    date_default_timezone_set('America/Sao_Paulo');
+    echo "A hora agora é " . date('d/m/Y H:i', time());
 
     ?>
 </body>
