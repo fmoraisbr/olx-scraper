@@ -281,11 +281,11 @@
                             $timezap = "Últimos 3 Aluguéis 🕑\n\n_Update: " . date('d/m/Y H:i', time()) . "_\n";
                             send_whatsapp($timezap);
 
-                            /*$contmsg = array(1, 2, 3);
+                            $contmsg = array(1, 2, 3);
                             foreach ($contmsg as $valor) {
                                 $timezap2 = $aspaslink . "\n";
                                 send_whatsapp($timezap2);
-                            }*/
+                            }
 
                             /*$timezap = "Aluguéis OLX 🕑\n\n_Update: " . date('d/m/Y H:i', time()) . "_";
                             send_whatsapp($timezap);*/
