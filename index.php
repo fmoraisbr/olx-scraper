@@ -276,12 +276,12 @@
                                 } /*else {
                                     echo "<h1> FUNCIONANDO UNOF! " . $link3 . " </h1><br/>";
                                 }*/
+                            }
 
-                                $contmsg = array(1, 2, 3);
-                                foreach ($contmsg as $valor) {
-                                    $timezap = "Últimos 3 Aluguéis 🕑\n\n_Update: " . date('d/m/Y H:i', time()) . "_\n\n" . $aspaslink . "\n";
-                                    send_whatsapp($timezap);
-                                }
+                            $contmsg = array(1, 2, 3);
+                            foreach ($contmsg as $valor) {
+                                $timezap = "Últimos 3 Aluguéis 🕑\n\n_Update: " . date('d/m/Y H:i', time()) . "_\n\n" . $aspaslink . "\n";
+                                send_whatsapp($timezap);
                             }
 
                             /*$timezap = "Aluguéis OLX 🕑\n\n_Update: " . date('d/m/Y H:i', time()) . "_";
