@@ -94,10 +94,15 @@
                     $content = file_get_contents($info);
                     // $content = file_get_contents('https://df.olx.com.br/distrito-federal-e-regiao/brasilia/ra-xix---candangolandia/imoveis/aluguel?pe=1500&roe=3&ros=2&sf=1');
 
-                    preg_match_all('/<span color="dark" aria-label="(.*?)" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
+                    preg_match_all('/<span aria-label="Anúncio publicado em: (.*?)" class="sc-11h4wdr-0 cHSTFT sc-ifAKCX cmFKIN" color="dark" font-weight="400">(.*?)<\/span>/s', $content, $matchesx);
+                    /* preg_match_all('/<span color="dark" aria-label="(.*?)" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesx); */
+                    /* <span aria-label="Anúncio publicado em: Hoje, 13:36." class="sc-11h4wdr-0 cHSTFT sc-ifAKCX cmFKIN" color="dark" font-weight="400">Hoje, 13:36</span> */
+
                     preg_match_all('/<span color="dark" class="wlwg1t-1 fsgKJO sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/s', $content, $matchesy);
                     // preg_match_all('/<div class="aoie8y-0 hRScWw">(.*?)<\/div>/s', $content, $matchesz);
-                    preg_match_all('/class="sc-ifAKCX eoKYee">(.*?)<\/span>/', $content, $matchesz);
+
+                    preg_match_all('/class="m7nrfa-0 cjhQnm sc-ifAKCX kaNiaQ" color="dark" font-weight="400">(.*?)<\/span>/', $content, $matchesz);
+                    //preg_match_all('/class="sc-ifAKCX eoKYee">(.*?)<\/span>/', $content, $matchesz);
                     /* class="sc-ifAKCX eoKYee">R$ 1.300</span> */
 
                     preg_match_all('/<span color="dark" title="(.*)" class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchest);
@@ -107,14 +112,14 @@
 
                     preg_match_all('/class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchesn);
 
-                    preg_match_all('/class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchesw);
+                    preg_match_all('/<div aria-label="(.*?)" class="sc-1ftm7qz-2 ilPFvN"><span title="(.*?)" aria-label="(.*?)" class="sc-1ftm7qz-0 itsfPe sc-ifAKCX cmFKIN" color="dark" font-weight="400">(.*?)<\/span>/', $content, $matchesw);
+                    /* preg_match_all('/class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">(.*?)<\/span>/', $content, $matchesw); */
+                    /* <span title="2 quartos" aria-label="2 quartos." class="sc-1ftm7qz-0 itsfPe sc-ifAKCX cmFKIN" color="dark" font-weight="400">2 quartos</span> */
                     // preg_match_all('/class="sc-1j5op1p-0 lnqdIU sc-ifAKCX eLPYJb" font-weight="400">3 quartos | 1 vaga<\/span>/', $content, $matchesw);
 
                     echo "<br>";
 
                     $numeros = array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
-
-
 
                     // echo "<h1>" . preg_match_all('/data-lurker_list_id="(.*?)"/', $content, $matchesk) . "</h1>";
 
@@ -168,8 +173,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">Nº</th>
-                                <th scope="col">Dia</th>
-                                <th scope="col">Hora</th>
+                                <th scope="col">Dia/hora</th>
+                                <!-- <th scope="col">Hora</th> -->
                                 <th scope="col">Opções</th>
                                 <th scope="col">Preço</th>
                                 <th scope="col">ID Anúncio ⤵️</th>
@@ -194,10 +199,10 @@
                                 /* [2] ------------------------ [START] Dia */
 
                                 $captura3 = $matchesx[1][$value];
-                                $link3 = substr($captura3, 23, 200);
-                                $aspaslink3 = str_replace('>', '', $link3);
+                                //$link3 = substr($captura3, 23, 200);
+                                $aspaslink3 = str_replace('.', '', $captura3);
 
-                                echo "<td>" . $link3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
+                                echo "<td>" . $aspaslink3 . "</td>"; // echo "<td>" . $matchesx[0][$value] . "</td>";
 
                                 /* [2] ------------------------ [END] Dia */
 
@@ -207,30 +212,64 @@
                                 $link4 = substr($captura4, 119, 200);
                                 $aspaslink4 = str_replace('</span>', '', $link4); // echo "<td>" . $matchesy[0][$value] . "</td>";
 
-                                echo "<td>" . $captura4 . "</td>";
+                                //echo "<td>" . $captura4 . "</td>";
 
                                 /* [3] ------------------------ [END] Hora */
 
                                 /* [4] ------------------------ [START] Opções */
 
                                 $captura5 = $matchesw[0][$value];
-                                $link5 = substr($captura5, 63, 9);
-                                $aspaslink5 = str_replace('</span>', '', $link5); // echo "<td>" . $matchesy[0][$value] . "</td>";
+                                $link5 = substr($captura5, 202, 2);
+                                //$aspaslink5 = str_replace('</span>', '', $link5); // echo "<td>" . $matchesy[0][$value] . "</td>";
 
-                                $aspaslink6 = str_replace(' quartos', '', $link5); // echo "<td>" . $matchesy[0][$value] . "</td>";
-                                $integer2 = (int) filter_var($aspaslink6, FILTER_SANITIZE_NUMBER_INT);
+                                //$aspaslink6 = str_replace(' quartos', '', $link5); // echo "<td>" . $matchesy[0][$value] . "</td>";
+                                //$integer2 = (int) filter_var($aspaslink6, FILTER_SANITIZE_NUMBER_INT);
 
-                                if ($integer2 >= 3) {
-                                    echo "<td style=\"color: aqua;\">" . $aspaslink5 . "</td>";
+                                $nquartos = (int) filter_var($link5, FILTER_SANITIZE_NUMBER_INT);
+
+                                //echo "<td>" . $nquartos . "</td>";
+
+
+                                if ($nquartos >= 3) {
+                                    echo "<td style=\"color: aqua;\">" . $nquartos . " quartos</td>";
                                 } else {
-                                    echo "<td>" . $aspaslink5 . "</td>";
+                                    echo "<td>" . $nquartos . " quartos</td>";
                                 }
+
 
                                 /* [4] ------------------------ [END] Opções */
 
                                 /* [4] ------------------------ [START] Valor em R$ */
 
-                                $variable1 = $matchesz[0][$value];
+                                $valorimovel = $matchesz[0][$value];
+                                $valorimovelsub = substr($valorimovel, 74, 10);
+
+                                $valorfloat = (float) filter_var($valorimovelsub, FILTER_SANITIZE_NUMBER_INT);
+
+                                if ($valorfloat > 1300) {
+                                    echo "<td style=\"color: red;\">R$ " . number_format($valorfloat, 0, ',', '.') . "</td>";
+                                } else {
+                                    echo "<td style=\"color: lawngreen;\">R$ " . number_format($valorfloat, 0, ',', '.') . "</td>";
+                                }
+
+                                /*if ($valorfloat > 1300) {
+                                    if (empty($valorfloat)) {
+                                        echo "<td style=\"color: white;\">R$ 0,00</td>";
+                                    }
+                                    if (isset($valorfloat)) {
+                                        echo "<td style=\"color: red;\">R$ " . number_format($valorfloat, 2, ',', '.') . "</td>";
+                                    }
+                                }
+                                if ($valorfloat < 1300) { //lawngreen
+                                    if (empty($valorfloat)) {
+                                        echo "<td style=\"color: white;\">R$ 0,00</td>";
+                                    }
+                                    if (isset($valorfloat)) {
+                                        echo "<td style=\"color: lawngreen;\">R$ " . number_format($valorfloat, 2, ',', '.') . "</td>";
+                                    }
+                                }*/
+
+                                /*$variable1 = $matchesz[0][$value];
                                 $integer1 = (float) filter_var($variable1, FILTER_SANITIZE_NUMBER_INT);
                                 $verificarint = ($integer1 * (-1));
 
@@ -249,7 +288,7 @@
                                     if (isset($verificarint)) {
                                         echo "<td style=\"color: lawngreen;\">R$ " . $verificarint . "</td>";
                                     }
-                                }
+                                }*/
 
                                 /* [4] ------------------------ [END] Valor em R$ */
 
@@ -268,14 +307,22 @@
 
                                 echo "</tr>";
 
+                                $resultadohoje = str_replace('.', '', $matchesx[1][$value]);
+                                $contadorhoje = substr($resultadohoje, 0, 4);
 
-                                if ($link3 === "Hoje") {
+                                //echo "<br/><h1 style=\"color: lawngreen;\">" . $contadorhoje . "</h1>";
+
+
+                                if ($contadorhoje === "Hoje") {
                                     $mensagem = "Alerta de Aluguel ⤵️\n\n"
                                         . $aspaslink;
                                     send_whatsapp($mensagem);
                                 }
+                            }
 
-                                $vetorhoje = array($link3);
+                            if ($contadorhoje === "Hoje") {
+                                $mensagem = "Update: " . date('d/m/Y H:i', time());
+                                send_whatsapp($mensagem);
                             }
 
                             //echo "<h1>" . $link3 . "</h1>";
