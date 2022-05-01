@@ -320,6 +320,9 @@
                                 }
                             }
 
+                            $resultadohoje = str_replace('.', '', $matchesx[1][$value]);
+                            $contadorhoje = substr($resultadohoje, 0, 4);
+
                             if ($contadorhoje === "Hoje") {
                                 $mensagem = "Update: " . date('d/m/Y H:i', time());
                                 send_whatsapp($mensagem);
